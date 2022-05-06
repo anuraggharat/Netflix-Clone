@@ -23,8 +23,8 @@ export default function Header() {
     <div
       className={
         header
-          ? `fixed w-screen bg-black flex justify-between align-middle items-center py-5 px-10`
-          : `fixed w-screen   flex justify-between align-middle items-center py-5 px-10`
+          ? `fixed w-screen z-20 bg-black flex justify-between align-middle items-center py-5 px-10`
+          : `fixed w-screen z-20  flex justify-between align-middle items-center py-5 px-10`
       }
     >
       <div>
