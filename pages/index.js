@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Header from '../components/Header'
 
 const data = [
@@ -46,6 +46,8 @@ export default function Home() {
     setAccClicked(id)
   }
   
+    
+
   return (
     <div className="text-white">
       <Head>
@@ -69,7 +71,7 @@ export default function Home() {
             Ready to watch? Enter your email to create or restart your
             membership.
           </p>
-          <div className="flex justify-center w-full bg-white mt-2">
+          <div className="flex justify-center w-full mt-2">
             <input
               type="email"
               className="w-4/6 px-5 py-3"
@@ -204,6 +206,35 @@ export default function Home() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="container text-center w-4/6 mx-auto p-5">
+        <p className="text-2xl mb-10">
+          Ready to watch? Enter your email to create or restart your membership.
+        </p>
+        <div className="flex justify-center w-full bg-white mt-2">
+          <input
+            type="email"
+            className="w-4/6 px-5 py-3"
+            placeholder="Email Address"
+          ></input>
+          <button className="w-2/6 bg-red-600 px-5 py-3 text-2xl flex flex-row justify-center items-center content-center">
+            Get Started
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 mt-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );

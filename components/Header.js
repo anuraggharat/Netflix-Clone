@@ -1,8 +1,32 @@
+import Link from 'next/link';
 import React from 'react'
+import { useState, useEffect } from "react";
+
 
 export default function Header() {
+  const [header, setHeaderscrolled] = useState(false);
+
+  useEffect(() => {
+    const listener = () => {
+      if (window.scrollY > 140) {
+        setHeaderscrolled(true);
+      } else setHeaderscrolled(false);
+    };
+    window.addEventListener("scroll", listener);
+
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
+  }, []);
+
   return (
-    <div className="fixed w-screen flex justify-between align-middle items-center py-5 px-10">
+    <div
+      className={
+        header
+          ? `fixed w-screen bg-black flex justify-between align-middle items-center py-5 px-10`
+          : `fixed w-screen   flex justify-between align-middle items-center py-5 px-10`
+      }
+    >
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +45,9 @@ export default function Header() {
           <option value="hindi">Hindi</option>
           <option value="marathi">Marathi</option>
         </select> */}
-        <button className="bg-red-600 text-white py-2 px-6 ">Sign in</button>
+        <Link href="/signin">
+          <a className="bg-red-600 text-white py-2 px-6 ">Signin</a>
+        </Link>
       </div>
     </div>
   );
