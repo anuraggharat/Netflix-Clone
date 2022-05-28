@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Steptwo() {
   return (
     <div className="flex py-20 flex-row justify-center items-center text-white ">
-      <div className="w-2/6 mt-20 text-center ">
+      <div className="w-5/6 md:w-2/6 mt-20 text-center ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-12 w-12 m-auto text-red-600 text-1xl"

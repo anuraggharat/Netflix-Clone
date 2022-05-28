@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Signin() {
   return (
     <div className="hero min-h-screen text-white flex flex-col justify-center items-center">
-      <div className="bg-[#000] bg-opacity-70 w-2/6 py-10 px-12">
+      <div className="bg-[#000] bg-opacity-70 w-100 md:w-2/6 py-10 px-12">
         <div className="my-5">
           <h1 className="text-5xl font-bold">Sign In</h1>
         </div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Cardpayment() {
   return (
     <div className="flex py-20 flex-row justify-center text-left items-center text-white ">
-      <div className="w-2/6 mt-20 text-left">
+      <div className="w-5/6 md:w-2/6 mt-20 text-left">
           <p>Step 3 of 3</p>
         <h1 className="text-4xl">Set up your Credit card or Debit card</h1>
         <div className="my-4 mt-10">
