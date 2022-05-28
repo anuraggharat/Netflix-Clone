@@ -28,7 +28,7 @@ export default function Registration() {
           {/* <p>Email is required</p> */}
         </div>
         <div className="mt-2 py-4 w-100">
-          <Link href="">
+          <Link href="/signup/steptwo">
             <a className="text-white block text-2xl rounded-md bg-red-600 text-center w-full p-3">
               Next
             </a>

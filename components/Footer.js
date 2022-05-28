@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="container w-4/6 text-zinc-400  mx-auto mt-20 p-10">
+    <footer className="container w-100 md:w-4/6 text-zinc-400  mx-auto mt-20 p-10">
       <p>Questions? Call 000-800-040-1843</p>
-      <div className="grid grid-cols-4 mt-10">
+      <div className="grid grid-cols-2 gap-10 md:grid-cols-4 mt-10">
         <div>
           <ul>
             <li className="my-2 hover:text-white">FAQ</li>

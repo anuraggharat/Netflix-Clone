@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 .hero{
-    background:
-    linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url('/assets/netflixbg.jpg');
+    background:linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url('/assets/netflixbg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.browse-page{
+    background: linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url('https: //www.google.com/imgres?imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2F-RcPZdihrp4%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-RcPZdihrp4&tbnid=ZGbbQRC8LgeAnM&vet=12ahUKEwjv3PSY_YH4AhU-_DgGHRJZDPEQMygBegUIARC-AQ..i&docid=ey9XFOTd5YAsZM&w=640&h=360&q=stranger%20things%20small%20clip&ved=2ahUKEwjv3PSY_YH4AhU-_DgGHRJZDPEQMygBegUIARC-AQ');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

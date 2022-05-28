@@ -289,7 +289,7 @@ const changePlan=(sel)=>{
             may use your account. Watch on 4 different devices at the same time
             with Premium, 2 with Standard, and 1 with Basic and Mobile.
           </p>
-          <Link href="">
+          <Link href="/signup/stepthree">
             <a className="text-white mt-10 block text-2xl rounded-md bg-red-600 text-center w-full p-3">
               Next
             </a>

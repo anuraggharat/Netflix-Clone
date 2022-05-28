@@ -74,8 +74,8 @@ export default function Steptwo() {
           <p>No ads and no extra fees. Ever.</p>
         </div>
         <div className="mt-2 py-4 w-100">
-          <Link href="">
-            <a className="text-white  block text-2xl rounded-md bg-red-600 text-center w-full p-3">
+          <Link href="/signup/steptwoplan">
+            <a className="text-white  block text-2xl rounded-md bg-[#e50914] text-center w-full p-3">
               Next
             </a>
           </Link>
