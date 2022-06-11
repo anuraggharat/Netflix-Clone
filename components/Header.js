@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React from 'react'
 import { useState, useEffect } from "react";
+import {BsSearch} from 'react-icons/bs'
+import {IoIosNotificationsOutline} from 'react-icons/io'
 
 
 export default function Header() {
@@ -18,6 +20,8 @@ export default function Header() {
       window.removeEventListener("scroll", listener);
     };
   }, []);
+
+  const [loggedIn,setLoggedIn] = useState(true);
 
   return (
     <div
@@ -41,16 +45,33 @@ export default function Header() {
           </svg>
         </Link>
       </div>
-      <div>
-        {/* <select name="language" id="language" className='mr-5 border-0 bg-black text-white py-2 px-6'>
-          <option value="english">English</option>
-          <option value="hindi">Hindi</option>
-          <option value="marathi">Marathi</option>
-        </select> */}
-        <Link href="/signin">
-          <a className="bg-red-600 text-white py-2 px-6 ">Signin</a>
-        </Link>
+      <div className="flex flex-1 justify-between">
+        <div className="px-10 flex items-center content-center">
+          <ul className="flex text-white items-center justify-center align-middle content-center">
+            <li className="mr-5">Home</li>
+            <li className="mr-5">TV shows</li>
+            <li className="mr-5">Movies</li>
+            <li className="mr-5">New & Popular</li>
+            <li className="mr-5">My List</li>
+            <li className="mr-5">Audio & Subtitles</li>
+          </ul>
+        </div>
+        <div className="flex items-center content-center">
+          <BsSearch className="text-xl mr-5 text-white" />
+          <IoIosNotificationsOutline className="text-2xl mr-5 text-white" />
+          <img
+            src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
+            className="w-10"
+          />
+        </div>
       </div>
+      {!loggedIn && (
+        <div>
+          <Link href="/signin">
+            <a className="bg-red-600 text-white py-2 px-6 ">Signin</a>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

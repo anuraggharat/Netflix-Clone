@@ -8,9 +8,47 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.browse-page{
-    background: linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url('https: //www.google.com/imgres?imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2F-RcPZdihrp4%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D-RcPZdihrp4&tbnid=ZGbbQRC8LgeAnM&vet=12ahUKEwjv3PSY_YH4AhU-_DgGHRJZDPEQMygBegUIARC-AQ..i&docid=ey9XFOTd5YAsZM&w=640&h=360&q=stranger%20things%20small%20clip&ved=2ahUKEwjv3PSY_YH4AhU-_DgGHRJZDPEQMygBegUIARC-AQ');
-    background-position: center;
+/* Style the video: 100% width and height to cover the entire window */
+#background-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: absolute;
+    bottom: 20%;
+    color: #f1f1f1;
+}
+.flex-movies{
+    display: flex;
+    overflow-x: auto;
+    width: auto !important;
+    flex-wrap: nowrap;
+}
+.flex-movies div{
+    width: 900px !important;
+    background-color: aquamarine;
+}
+.flex-movies div img {
+    width: 500px;
+}
+.home-browse{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('/assets/extraction.jpg');
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+}
+.hide-scroll-bar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+    display: none;
 }
