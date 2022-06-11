@@ -17,7 +17,6 @@ export default function Registration() {
             className="border-white border-[1px] mt-4 rounded-sm p-4 bg-transparent w-full"
             type="email"
           />
-          {/* <p>Email is required</p> */}
         </div>
         <div className="mt-2 py-4 w-100">
           <p className="text-xl">Password</p>
@@ -25,7 +24,6 @@ export default function Registration() {
             className="border-white border-[1px] mt-4 rounded-sm  p-4 bg-transparent w-full"
             type="password"
           />
-          {/* <p>Email is required</p> */}
         </div>
         <div className="mt-2 py-4 w-100">
           <Link href="/signup/steptwo">

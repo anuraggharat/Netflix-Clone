@@ -60,60 +60,87 @@ const data1 = [
 const data2 = [
   {
     id: 1,
-    pic: "https://www.denofgeek.com/wp-content/uploads/2021/11/WebStory-Hellbound-review-netflix.jpeg",
+    pic: "https://www.indiewire.com/wp-content/uploads/2021/05/E1B0XwbXsAAcGNi.jpg",
   },
   {
     id: 2,
-    pic: "https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/sixnpcoput3n9k8e_1637743479.jpeg",
+    pic: "https://cdn1-www.superherohype.com/assets/uploads/2022/02/theadamproject.jpg",
   },
   {
     id: 3,
-    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtxvuAcOzXHOdKWgFuxeS6p_kEv7vauMhgjXu-PrV4DZx39GiSmlvrhZUNYqLuKFSyXSo&usqp=CAU",
+    pic: "https://cdn.mos.cms.futurecdn.net/YJtbJnpHbE9ZLwka8Jz9PW.jpg",
   },
   {
     id: 4,
-    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY2GqZSYGdam6BjJEpNe6OhFN1hKiGs0qecSDJf4rkAqwiBN9JDBxp4QWUBnTeqN1dGak&usqp=CAU",
+    pic: "https://images.indianexpress.com/2021/11/Red_Notice_review-1200.jpg",
   },
   {
     id: 5,
-    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRTb__WfkBmswYEmTjV8rIVPiY86tS34nJUrZhZkM4lnlmNSBNi4XnytCsJmZznLTmcw4&usqp=CAU",
+    pic: "https://cdn.mos.cms.futurecdn.net/qX5psXPx8TexJQ4dyL5nqi.jpg",
   },
   {
     id: 6,
-    pic: "https://wallpaperaccess.com/full/1087736.jpg",
+    pic: "https://images.indianexpress.com/2021/03/godzilla-vs-kong-1200-3.jpg",
   },
 ];
 
 const data3 = [
   {
     id: 1,
-    pic: "https://www.denofgeek.com/wp-content/uploads/2021/11/WebStory-Hellbound-review-netflix.jpeg",
+    pic: "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/02/25/1022990-alia-bhatt-gangubai-kathiawadi.jpg",
   },
   {
     id: 2,
-    pic: "https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/sixnpcoput3n9k8e_1637743479.jpeg",
+    pic: "https://m.media-amazon.com/images/M/MV5BNWRmMDZlYmMtNGM4MS00NjI0LWIzZmQtNzUyZWZkODE3Yjc0XkEyXkFqcGdeQXVyODEwMzg4Nzg@._V1_.jpg",
   },
   {
     id: 3,
-    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtxvuAcOzXHOdKWgFuxeS6p_kEv7vauMhgjXu-PrV4DZx39GiSmlvrhZUNYqLuKFSyXSo&usqp=CAU",
+    pic: "https://images.indianexpress.com/2021/06/haseen-dillruba-1200-2.jpg",
   },
   {
     id: 4,
-    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY2GqZSYGdam6BjJEpNe6OhFN1hKiGs0qecSDJf4rkAqwiBN9JDBxp4QWUBnTeqN1dGak&usqp=CAU",
+    pic: "https://assetscdn1.paytm.com/images/cinema/soryavanshi-app-780c98c0-36fd-11ec-b83e-0f984fa97b41.jpg",
   },
   {
     id: 5,
-    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRTb__WfkBmswYEmTjV8rIVPiY86tS34nJUrZhZkM4lnlmNSBNi4XnytCsJmZznLTmcw4&usqp=CAU",
+    pic: "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/11/19/1006039-dhamaka-kartik-aaryan.jpg",
   },
   {
     id: 6,
-    pic: "https://wallpaperaccess.com/full/1087736.jpg",
+    pic: "http://www.firstpost.com/wp-content/uploads/large_file_plugin/2020/02/1582011635_KiaraGuiltyS.png",
   },
 ];
 
+
+const usshows = [
+  {
+    id: 1,
+    pic: "https://phantom-marca.unidadeditorial.es/4ede02c9fb3939b4466344dd6709187e/resize/1320/f/jpg/assets/multimedia/imagenes/2022/04/04/16490904034742.jpg",
+  },
+  {
+    id: 2,
+    pic: "https://d.newsweek.com/en/full/2054936/still-all-us-are-dead.jpg",
+  },
+  {
+    id: 3,
+    pic: "https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQa82SXtuPjaBo68E43Ii7t7YL6uXHCOslWuO5sb_gyhlwHj66UKt4gzupamC4fQ_ns0P6oO9ISQZ4usg1NCQVj7DsuyEson1DE4N1JsRWvmsu-T8-nMcEoSN58qw2JgImdc1JiNqMxfYGOK_hlsKvhbap9A.jpg?r=e2c",
+  },
+  {
+    id: 4,
+    pic: "https://www.hmv.me/wp-content/uploads/2020/10/dark.png",
+  },
+  {
+    id: 5,
+    pic: "https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg",
+  },
+  {
+    id: 6,
+    pic: "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F210928133734-13-october-streaming-2021-you.jpg",
+  },
+];
 export default function Browse() {
   return (
-    <div className="bg-black min-h-screen text-white flex flex-col justify-center items-center">
+    <div className=" min-h-screen text-white flex flex-col justify-center items-center">
       <div className="home-browse">
         <div className="absolute bottom-24 ml-10 w-1/2">
           <h1 className="text-6xl text-white">Extraction</h1>
@@ -136,7 +163,7 @@ export default function Browse() {
         </div>
       </div>
 
-      <div className="max-w-full pl-10">
+      <div className="max-w-full pl-10 mt-5">
         <div className="my-5">
           <h1 className="mb-2 text-xl font-bold">Trending on Netflix</h1>
         </div>
@@ -148,7 +175,7 @@ export default function Browse() {
           </div>
         </div>
         <div className="my-5">
-          <h1 className="mb-2 text-xl font-bold">Trending on Netflix</h1>
+          <h1 className="mb-2 text-xl font-bold">Popular in India</h1>
         </div>
         <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
           <div className="flex flex-nowrap ">
@@ -158,11 +185,31 @@ export default function Browse() {
           </div>
         </div>
         <div className="my-5">
-          <h1 className="mb-2 text-xl font-bold">Trending on Netflix</h1>
+          <h1 className="mb-2 text-xl font-bold">Hollywood movies</h1>
         </div>
         <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
           <div className="flex flex-nowrap ">
-            {data.map((item, index) => (
+            {data2.map((item, index) => (
+              <MovieCard item={item} key={index} />
+            ))}
+          </div>
+        </div>
+        <div className="my-5">
+          <h1 className="mb-2 text-xl font-bold">Popular Hollywood shows</h1>
+        </div>
+        <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
+          <div className="flex flex-nowrap ">
+            {data3.map((item, index) => (
+              <MovieCard item={item} key={index} />
+            ))}
+          </div>
+        </div>
+        <div className="my-5">
+          <h1 className="mb-2 text-xl font-bold">Bollywood Shows</h1>
+        </div>
+        <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
+          <div className="flex flex-nowrap ">
+            {usshows.map((item, index) => (
               <MovieCard item={item} key={index} />
             ))}
           </div>
