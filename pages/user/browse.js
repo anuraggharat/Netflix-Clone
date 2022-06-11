@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import MovieCard from "../../components/MovieCard";
+import MovieList from "../../components/MovieList";
+import MovieModal from "../../components/MovieModal";
 
 
-const data = [
+const trending = [
   {
     id: 1,
     pic: "https://www.denofgeek.com/wp-content/uploads/2021/11/WebStory-Hellbound-review-netflix.jpeg",
@@ -22,15 +24,14 @@ const data = [
   },
   {
     id: 5,
-    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRTb__WfkBmswYEmTjV8rIVPiY86tS34nJUrZhZkM4lnlmNSBNi4XnytCsJmZznLTmcw4&usqp=CAU",
+    pic: "https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/06/Ram-Charan-RRR-feature.jpg?q=50&fit=contain&w=1500&h=750&dpr=1.5",
   },
   {
     id: 6,
     pic: "https://wallpaperaccess.com/full/1087736.jpg",
   },
 ];
-
-const data1 = [
+const popular = [
   {
     id: 1,
     pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVx9ZpyDDEC3kq5uFnSF_dEr6aKQK9brxEcg&usqp=CAU",
@@ -56,8 +57,7 @@ const data1 = [
     pic: "https://i.dawn.com/large/2021/10/616561fec1d32.jpg",
   },
 ];
-
-const data2 = [
+const hollywoodMovies = [
   {
     id: 1,
     pic: "https://www.indiewire.com/wp-content/uploads/2021/05/E1B0XwbXsAAcGNi.jpg",
@@ -83,8 +83,7 @@ const data2 = [
     pic: "https://images.indianexpress.com/2021/03/godzilla-vs-kong-1200-3.jpg",
   },
 ];
-
-const data3 = [
+const bollywoodMovies = [
   {
     id: 1,
     pic: "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/02/25/1022990-alia-bhatt-gangubai-kathiawadi.jpg",
@@ -110,9 +109,7 @@ const data3 = [
     pic: "http://www.firstpost.com/wp-content/uploads/large_file_plugin/2020/02/1582011635_KiaraGuiltyS.png",
   },
 ];
-
-
-const usshows = [
+const usShows = [
   {
     id: 1,
     pic: "https://phantom-marca.unidadeditorial.es/4ede02c9fb3939b4466344dd6709187e/resize/1320/f/jpg/assets/multimedia/imagenes/2022/04/04/16490904034742.jpg",
@@ -138,12 +135,13 @@ const usshows = [
     pic: "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F210928133734-13-october-streaming-2021-you.jpg",
   },
 ];
+
 export default function Browse() {
   return (
     <div className=" min-h-screen text-white flex flex-col justify-center items-center">
       <div className="home-browse">
-        <div className="absolute bottom-24 ml-10 w-1/2">
-          <h1 className="text-6xl text-white">Extraction</h1>
+        <div className="absolute bottom-24 ml-10 w-100 md:w-1/2">
+          <h1 className="text-7xl font-medium text-white my-4">Extraction</h1>
           <p>
             A black-market mercenary who has nothing to lose is hired to rescue
             the kidnapped son of an imprisoned international crime lord.
@@ -164,57 +162,13 @@ export default function Browse() {
       </div>
 
       <div className="max-w-full pl-10 mt-5">
-        <div className="my-5">
-          <h1 className="mb-2 text-xl font-bold">Trending on Netflix</h1>
-        </div>
-        <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
-          <div className="flex flex-nowrap ">
-            {data.map((item, index) => (
-              <MovieCard item={item} key={index} />
-            ))}
-          </div>
-        </div>
-        <div className="my-5">
-          <h1 className="mb-2 text-xl font-bold">Popular in India</h1>
-        </div>
-        <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
-          <div className="flex flex-nowrap ">
-            {data1.map((item, index) => (
-              <MovieCard item={item} key={index} />
-            ))}
-          </div>
-        </div>
-        <div className="my-5">
-          <h1 className="mb-2 text-xl font-bold">Hollywood movies</h1>
-        </div>
-        <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
-          <div className="flex flex-nowrap ">
-            {data2.map((item, index) => (
-              <MovieCard item={item} key={index} />
-            ))}
-          </div>
-        </div>
-        <div className="my-5">
-          <h1 className="mb-2 text-xl font-bold">Popular Hollywood shows</h1>
-        </div>
-        <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
-          <div className="flex flex-nowrap ">
-            {data3.map((item, index) => (
-              <MovieCard item={item} key={index} />
-            ))}
-          </div>
-        </div>
-        <div className="my-5">
-          <h1 className="mb-2 text-xl font-bold">Bollywood Shows</h1>
-        </div>
-        <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
-          <div className="flex flex-nowrap ">
-            {usshows.map((item, index) => (
-              <MovieCard item={item} key={index} />
-            ))}
-          </div>
-        </div>
+        <MovieList data={trending} title="Trending on Netflix" />
+        <MovieList data={hollywoodMovies} title="Hollywood Movies" />
+        <MovieList data={popular} title="Popular in India" />
+        <MovieList data={usShows} title="Popular shows on Netflix" />
+        <MovieList data={bollywoodMovies} title="Bollywood Movies" />
       </div>
+      {/* <MovieModal /> */}
     </div>
   );
 }

@@ -16,7 +16,9 @@
     min-width: 100%;
     min-height: 100vh;
 }
-
+body{
+    transition: 1s all ease-in;
+}
 /* Add some content at the bottom of the video/page */
 .content {
     position: absolute;
@@ -51,4 +53,21 @@
 
 .hide-scroll-bar::-webkit-scrollbar {
     display: none;
+}
+/* .moviecard:hover{
+    transform: scale(1.1);
+}
+.moviecard:hover > .hidtext{
+    display: block;
+}
+.hidtext{
+    display: none;
+} */
+.searchbox{
+    transition: 0.5s ease-in all;   
+    cursor: pointer; 
+}
+.searchbox:hover input{
+    display: block;
+    transition: 0.5s ease-in;
 }

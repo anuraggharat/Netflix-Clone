@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from './Footer'
 import Header from './Header'
+import MovieModal from './MovieModal'
 
 export default function Layout({children}) {
   return (

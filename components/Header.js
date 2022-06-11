@@ -3,10 +3,12 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import {BsSearch} from 'react-icons/bs'
 import {IoIosNotificationsOutline} from 'react-icons/io'
+import { AiFillCaretDown } from "react-icons/ai";
 
 
 export default function Header() {
   const [header, setHeaderscrolled] = useState(false);
+  const [dropDown, setDropdrown] = useState(false)
 
   useEffect(() => {
     const listener = () => {
@@ -21,14 +23,19 @@ export default function Header() {
     };
   }, []);
 
+
+  const handleDropDown=()=>{
+    setDropdrown(!dropDown)
+  }
+
   const [loggedIn,setLoggedIn] = useState(true);
 
   return (
     <div
       className={
         header
-          ? `fixed w-screen z-20 bg-black flex justify-between align-middle items-center py-5 px-10`
-          : `fixed w-screen z-20  flex justify-between align-middle items-center py-5 px-10`
+          ? `fixed w-screen z-10 bg-black flex justify-between align-middle items-center px-5 py-5 md:py-5 md:px-10`
+          : `fixed w-screen z-10 flex justify-between align-middle items-center px-5 py-5 md:py-5 md:px-10`
       }
     >
       <div>
@@ -45,26 +52,70 @@ export default function Header() {
           </svg>
         </Link>
       </div>
-      <div className="flex flex-1 justify-between">
-        <div className="px-10 flex items-center content-center">
-          <ul className="flex text-white items-center justify-center align-middle content-center">
-            <li className="mr-5">Home</li>
-            <li className="mr-5">TV shows</li>
-            <li className="mr-5">Movies</li>
-            <li className="mr-5">New & Popular</li>
-            <li className="mr-5">My List</li>
-            <li className="mr-5">Audio & Subtitles</li>
-          </ul>
+      {loggedIn && (
+        <div className=" flex  md:flex flex-1 justify-between ">
+          <div className="hidden px-10 md:flex items-center content-center">
+            <ul className="flex text-white items-center justify-center align-middle content-center">
+              <li className="mr-5">Home</li>
+              <li className="mr-5">TV shows</li>
+              <li className="mr-5">Movies</li>
+              <li className="mr-5">New & Popular</li>
+              <li className="mr-5">My List</li>
+              <li className="mr-5">Audio & Subtitles</li>
+            </ul>
+          </div>
+          <div className="relative block md:hidden">
+            <p
+              className="bg-transparent flex	items-center text-white py-2 px-4 rounded"
+              onClick={() => handleDropDown()}
+            >
+              Browse <AiFillCaretDown />
+            </p>
+            <div
+              className={
+                dropDown
+                  ? " origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-black bg-opacity-80 text-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  : "hidden "
+              }
+            >
+              <a href="#" className=" block px-4 py-2 text-sm">
+                Home
+              </a>
+              <a href="#" className=" block px-4 py-2 text-sm">
+                TV shows
+              </a>
+              <a href="#" className=" block px-4 py-2 text-sm">
+                Movies
+              </a>
+              <a href="#" className=" block px-4 py-2 text-sm">
+                New & Popular
+              </a>
+              <a href="#" className=" block px-4 py-2 text-sm">
+                My List
+              </a>
+              <a href="#" className=" block px-4 py-2 text-sm">
+                Audio & Subtitles
+              </a>
+            </div>
+          </div>
+          <div className="flex items-center content-center">
+            <div className="flex items-center mr-3 searchbox transition-all ease-in-out duration-500 ">
+              <BsSearch className="text-xl mr-3 transition ease-in-out delay-150 text-white duration-1000" />
+              <input
+                className="border-[1px] px-2 hidden  delay-150  bg-transparent h-100 w-100 transition-all ease-in duration-1000"
+                placeholder="search"
+              />
+            </div>
+            <IoIosNotificationsOutline className="text-2xl mr-5 text-white" />
+            <Link href="/user/browse">
+              <img
+                src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
+                className="w-10"
+              />
+            </Link>
+          </div>
         </div>
-        <div className="flex items-center content-center">
-          <BsSearch className="text-xl mr-5 text-white" />
-          <IoIosNotificationsOutline className="text-2xl mr-5 text-white" />
-          <img
-            src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
-            className="w-10"
-          />
-        </div>
-      </div>
+      )}
       {!loggedIn && (
         <div>
           <Link href="/signin">
