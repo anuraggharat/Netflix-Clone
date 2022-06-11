@@ -18,7 +18,7 @@ const changePlan=(sel)=>{
       <div className=" w-5/6 md:w-4/6 flex flex-col text-white m-auto">
         <p className="text-2xl my-2">Step 2 of 3</p>
         <h1 className="text-4xl my-2 font-bold">
-          Choose the plan that's right for you
+          Choose the plan {"that's"} right for you
         </h1>
         <div className="flex flex-row text-xl my-2 items-center justify-start">
           <svg

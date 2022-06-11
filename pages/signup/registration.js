@@ -9,7 +9,7 @@ export default function Registration() {
         <h1 className="font-bold text-2xl md:text-4xl my-5">
           Create a password to start your membership
         </h1>
-        <p className="my-2 md:text-xl">Just a few more steps and you're done!</p>
+        <p className="my-2 md:text-xl">Just a few more steps and {"you're"} done!</p>
         <p className="my-2  md:text-xl">We hate paperwork, too!</p>
         <div className="mt-2 py-4 w-100">
           <p className="text-xl">Email</p>

@@ -10,7 +10,7 @@ export default function Upipayment() {
         <div className="my-4 mt-10">
           <p>
             UPI AutoPay is a new way to pay with UPI that will charge you
-            automatically every month. That way you'll never miss out on your
+            automatically every month. That way {"you'll"} never miss out on your
             shows and movies.
           </p>
           <p className="font-bold mt-4">
