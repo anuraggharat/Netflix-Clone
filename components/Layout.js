@@ -5,7 +5,7 @@ import MovieModal from './MovieModal'
 
 export default function Layout({children}) {
   return (
-    <div className='w-full min-h-screen  p-0 bg-black'>
+    <div className='relative w-full min-h-screen  p-0 bg-black'>
         <Header />
         {children}
         <Footer />

@@ -50,7 +50,10 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
+.bg-gradient{
+    background: rgb(48, 48, 48);
+        background: linear-gradient(180deg, rgba(48, 48, 48, 1) 0%, rgba(0, 0, 0, 1) 72%);
+}
 .hide-scroll-bar::-webkit-scrollbar {
     display: none;
 }

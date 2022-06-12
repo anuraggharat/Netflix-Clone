@@ -1,7 +1,7 @@
 import React from 'react'
 import MovieCard from './MovieCard';
 
-export default function MovieList({data,title}) {
+export default function MovieList({ data, title, toggleModal }) {
   return (
     <div>
       <div className="my-5">
@@ -10,7 +10,7 @@ export default function MovieList({data,title}) {
       <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
         <div className="flex flex-nowrap ">
           {data.map((item, index) => (
-            <MovieCard item={item} key={index} />
+            <MovieCard item={item} key={index} toggleModal={toggleModal} />
           ))}
         </div>
       </div>

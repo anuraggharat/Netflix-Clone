@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import MovieCard from "../../components/MovieCard";
 import MovieList from "../../components/MovieList";
 import MovieModal from "../../components/MovieModal";
-
 
 const trending = [
   {
@@ -136,11 +135,20 @@ const usShows = [
   },
 ];
 
+
 export default function Browse() {
+const [modal, setModal] = useState(false);
+
+const [curr,setCurr]=useState(null)
+const toggleModal=()=>{
+  
+  setModal(!modal)
+}
+
   return (
     <div className=" min-h-screen text-white flex flex-col justify-center items-center">
-      <div className="home-browse">
-        <div className="absolute bottom-24 ml-10 w-100 md:w-1/2">
+      <div className="home-browse relative">
+        <div className="absolute bottom-24 ml-5 md:ml-10 w-100 md:w-1/2">
           <h1 className="text-7xl font-medium text-white my-4">Extraction</h1>
           <p>
             A black-market mercenary who has nothing to lose is hired to rescue
@@ -161,14 +169,34 @@ export default function Browse() {
         </div>
       </div>
 
-      <div className="max-w-full pl-10 mt-5">
-        <MovieList data={trending} title="Trending on Netflix" />
-        <MovieList data={hollywoodMovies} title="Hollywood Movies" />
-        <MovieList data={popular} title="Popular in India" />
-        <MovieList data={usShows} title="Popular shows on Netflix" />
-        <MovieList data={bollywoodMovies} title="Bollywood Movies" />
+      <div className="max-w-full pl-5 md:pl-10 mt-5">
+        <MovieList
+          data={trending}
+          title="Trending on Netflix"
+          toggleModal={toggleModal}
+        />
+        <MovieList
+          data={hollywoodMovies}
+          title="Hollywood Movies"
+          toggleModal={toggleModal}
+        />
+        <MovieList
+          data={popular}
+          title="Popular in India"
+          toggleModal={toggleModal}
+        />
+        <MovieList
+          data={usShows}
+          title="Popular shows on Netflix"
+          toggleModal={toggleModal}
+        />
+        <MovieList
+          data={bollywoodMovies}
+          title="Bollywood Movies"
+          toggleModal={toggleModal}
+        />
       </div>
-      {/* <MovieModal /> */}
+      {modal && <MovieModal toggleModal={toggleModal} item={curr} />}
     </div>
   );
 }
