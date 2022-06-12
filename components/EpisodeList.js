@@ -20,7 +20,7 @@ export default function EpisodeList({index,item}) {
         <div className="h-auto mt-2 md:mt-5">
           <p className="mt-auto font-light text-xs md:text-md">
             Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
+            industry. Lorem Ipsum has been the {"industry's"} standard dummy text
             ever since the 1500s.
           </p>
         </div>

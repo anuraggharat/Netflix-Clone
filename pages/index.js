@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState,useEffect } from 'react'
 import Header from '../components/Header'
+import {IoIosArrowForward} from 'react-icons/io'
 
 const data = [
   {
@@ -74,26 +75,13 @@ export default function Home() {
           <div className="flex justify-center w-full mt-4">
             <input
               type="email"
-              className="w-4/6 md:px-5 px-1 text-xs "
+              className="w-4/6 md:px-5 px-2 py-3 text-xs "
               placeholder="Email Address"
             ></input>
             <Link href={"/signup/registration"}>
-              <a className="w-2/6 bg-red-600 px-1 md:px-5 md:py-3 text-xs md:text-2xl flex flex-row justify-center items-center content-center">
+              <a className="w-2/6 bg-red-600 px-1 md:px-5 md:py-3 text-sm md:text-2xl flex flex-row justify-center items-center content-center">
                 Get Started
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-6 mt-1"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                <IoIosArrowForward />
               </a>
             </Link>
           </div>
@@ -101,7 +89,7 @@ export default function Home() {
       </div>
       <div className="p-10 container mx-auto">
         <div className="grid grid-cold-1 md:grid-cols-2 ">
-          <div className="flex p-10 flex-col justify-center md:text-left  text-center  text-white">
+          <div className="flex p-10 order-2 md:order-1 flex-col justify-center md:text-left  text-center  text-white">
             <h1 className="text-2xl md:text-5xl mb-5 font-bold">
               Enjoy on your TV.
             </h1>
@@ -110,7 +98,7 @@ export default function Home() {
               Blu-ray players and more.
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-center ">
             <img src="/assets/netflix1.png" />
           </div>
         </div>
@@ -128,7 +116,7 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cold-1 md:grid-cols-2 ">
-          <div className="flex p-10 flex-col justify-center text-center md:text-left  text-white">
+          <div className="flex p-10 order-3 flex-col justify-center text-center md:text-left  text-white">
             <h1 className="text-2xl md:text-5xl mb-5 font-bold">
               Watch everywhere.
             </h1>
@@ -142,10 +130,10 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 ">
-          <div className="text-center">
+          <div className="text-center ">
             <img src="/assets/netflix4.png" />
           </div>
-          <div className="flex p-10 flex-col justify-center text-center  md:text-left  text-white">
+          <div className="flex p-10  flex-col justify-center text-center  md:text-left  text-white">
             <h1 className="text-2xl md:text-5xl mb-5 font-bold">
               Create profiles for children.
             </h1>
@@ -206,11 +194,11 @@ export default function Home() {
             <div
               className={
                 accClicked == item.id
-                  ? "w-100 flex flex-row justify-between items-center px-10 py-5 mx-auto"
+                  ? "w-100 flex flex-row justify-between items-center px-3 md:px-10 py-5 mx-auto"
                   : " hidden"
               }
             >
-              <p className="text-2xl">{item.answer}</p>
+              <p className="text-sm md:text-2xl">{item.answer}</p>
             </div>
           </div>
         ))}
@@ -227,20 +215,7 @@ export default function Home() {
           ></input>
           <button className="w-2/6 bg-red-600 md:px-5 md:py-3 px-2 py-1 text-sm md:text-2xl flex flex-row justify-center items-center content-center">
             Get Started
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 mt-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <IoIosArrowForward />s{" "}
           </button>
         </div>
       </div>

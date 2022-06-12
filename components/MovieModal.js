@@ -77,10 +77,10 @@ export default function MovieModal({item,toggleModal}) {
               </h4>
               <p className="font-bold my-5">#1 in Shows today</p>
               <p className="my-5 text-sm">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
+                {`Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                of type and scrambled it to make a type specimen book.`}
               </p>
             </div>
             <div className="w-100 md:w-1/2">
