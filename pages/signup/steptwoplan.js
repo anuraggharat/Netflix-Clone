@@ -71,16 +71,16 @@ const changePlan=(sel)=>{
           </svg>
           <p>Change or cancel your plan anytime.</p>
         </div>
-        <div className="container mt-10 ">
-          <div className="w-100 flex">
-            <div className="w-2/6 p-0"></div>
+        <div className="container mt-10 pb-10 ">
+          <div className="w-100 flex  ">
+            <div className="w-1/5 md:w-2/6 p-0"></div>
             <div
-              className="w-1/6  flex flex-col justify-center  text-center items-center cursor-pointer"
+              className="w-1/5 md:w-2/6 flex flex-col justify-center  text-center items-center cursor-pointer"
               onClick={() => changePlan("mobile")}
             >
               <div
                 className={
-                  "w-28 h-28 font-normal text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
+                  "w-14 h-14 md:w-28 md:h-28 text-sm font-normal md:text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
                   (selected == "mobile" ? "" : "opacity-40")
                 }
               >
@@ -88,12 +88,12 @@ const changePlan=(sel)=>{
               </div>
             </div>
             <div
-              className="w-1/6 p-2 flex flex-col justify-center  text-center items-center cursor-pointer"
+              className="w-1/5 md:w-2/6 p-2 flex flex-col justify-center  text-center items-center cursor-pointer"
               onClick={() => changePlan("basic")}
             >
               <div
                 className={
-                  "w-28 h-28 font-normal text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
+                  "w-14 h-14 md:w-28 md:h-28 text-sm font-normal md:text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
                   (selected == "basic" ? "" : "opacity-40")
                 }
               >
@@ -101,12 +101,12 @@ const changePlan=(sel)=>{
               </div>
             </div>
             <div
-              className="w-1/6 p-2 flex flex-col justify-center    text-center items-center cursor-pointer"
+              className="w-1/5 md:w-2/6 p-2 flex flex-col justify-center    text-center items-center cursor-pointer"
               onClick={() => changePlan("standard")}
             >
               <div
                 className={
-                  "w-28 h-28 font-normal text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
+                  "w-14 h-14 md:w-28 md:h-28 text-sm font-normal md:text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
                   (selected == "standard" ? "" : "opacity-40")
                 }
               >
@@ -119,7 +119,7 @@ const changePlan=(sel)=>{
             >
               <div
                 className={
-                  "w-28 h-28 font-normal text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
+                  "w-14 h-14 md:w-28 md:h-28 text-sm font-normal md:text-xl  flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
                   (selected == "premium" ? "" : "opacity-40")
                 }
               >
@@ -128,27 +128,27 @@ const changePlan=(sel)=>{
             </div>
           </div>
           <div className="w-100 flex py-10 text-xl">
-            <div className="w-2/6 ">
+            <div className="w-1/6 md:w-2/6 md:text-md text-sm">
               <p>Monthly Price</p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6  flex flex-col justify-center  text-center items-center">
               <p className={selected == "mobile" ? "text-white" : "opacity-40"}>
                 ₹ 149/-
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6  flex flex-col justify-center  text-center items-center">
               <p className={selected == "basic" ? "text-white" : "opacity-40"}>
                 ₹ 149/-
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6  flex flex-col justify-center  text-center items-center">
               <p
                 className={selected == "standard" ? "text-white" : "opacity-40"}
               >
                 ₹ 149/-
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6 flex flex-col justify-center  text-center items-center">
               <p
                 className={selected == "premium" ? "text-white" : "opacity-40"}
               >
@@ -158,27 +158,27 @@ const changePlan=(sel)=>{
           </div>
           <div className="w-100 h-[0.5px] bg-gray-400"></div>
           <div className="w-100 flex py-10 text-xl ">
-            <div className="w-2/6 ">
+            <div className="w-1/6 md:w-2/6 md:text-md text-sm">
               <p>Video Quality</p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6 flex flex-col justify-center  text-center items-center">
               <p className={selected == "mobile" ? "text-white" : "opacity-40"}>
                 Good
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6 flex flex-col justify-center  text-center items-center">
               <p className={selected == "basic" ? "text-white" : "opacity-40"}>
                 Good
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6 flex flex-col justify-center  text-center items-center">
               <p
                 className={selected == "standard" ? "text-white" : "opacity-40"}
               >
                 Better
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6  flex flex-col justify-center  text-center items-center">
               <p
                 className={selected == "premium" ? "text-white" : "opacity-40"}
               >
@@ -188,27 +188,27 @@ const changePlan=(sel)=>{
           </div>
           <div className="w-100 h-[0.5px] bg-gray-400"></div>{" "}
           <div className="w-100 flex py-10 text-xl ">
-            <div className="w-2/6 ">
+            <div className="w-1/6 md:w-2/6 md:text-md text-sm ">
               <p>Resolution</p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6 flex flex-col justify-center  text-center items-center">
               <p className={selected == "mobile" ? "text-white" : "opacity-40"}>
                 480p
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6  flex flex-col justify-center  text-center items-center">
               <p className={selected == "basic" ? "text-white" : "opacity-40"}>
                 480p
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6 flex flex-col justify-center  text-center items-center">
               <p
                 className={selected == "standard" ? "text-white" : "opacity-40"}
               >
                 1080p
               </p>
             </div>
-            <div className="w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5 text-sm md:w-1/6 flex flex-col justify-center  text-center items-center">
               <p
                 className={selected == "premium" ? "text-white" : "opacity-40"}
               >
@@ -218,12 +218,12 @@ const changePlan=(sel)=>{
           </div>
           <div className="w-100 h-[0.5px] bg-gray-400"></div>{" "}
           <div className="w-100 flex py-10  ">
-            <div className="w-2/6 ">
+            <div className="w-1/6 md:w-2/6 md:text-md text-sm">
               <p>Devices you can use to watch</p>
             </div>
             <div
               className={
-                "w-1/6  flex flex-col justify-start  text-center items-center " +
+                "w-1/5 text-sm md:w-1/6 flex flex-col justify-start  text-center items-center " +
                 (selected == "mobile" ? "text-white" : "opacity-40")
               }
             >
@@ -232,7 +232,7 @@ const changePlan=(sel)=>{
             </div>
             <div
               className={
-                "w-1/6  flex flex-col justify-start  text-center items-center " +
+                "w-1/5 text-sm md:w-1/6  flex flex-col justify-start  text-center items-center " +
                 (selected == "basic" ? "text-white" : "opacity-40")
               }
             >
@@ -247,7 +247,7 @@ const changePlan=(sel)=>{
             </div>
             <div
               className={
-                "w-1/6  flex flex-col justify-start  text-center items-center " +
+                "w-1/5 text-sm md:w-1/6 flex flex-col justify-start  text-center items-center " +
                 (selected == "standard" ? "text-white" : "opacity-40")
               }
             >
@@ -262,7 +262,7 @@ const changePlan=(sel)=>{
             </div>
             <div
               className={
-                "w-1/6  flex flex-col justify-start  text-center items-center " +
+                "w-1/5 text-sm md:w-1/6 flex flex-col justify-start  text-center items-center " +
                 (selected == "premium" ? "text-white" : "opacity-40")
               }
             >

@@ -89,7 +89,7 @@ export default function Home() {
       </div>
       <div className="p-10 container mx-auto">
         <div className="grid grid-cold-1 md:grid-cols-2 ">
-          <div className="flex p-10 order-2 md:order-1 flex-col justify-center md:text-left  text-center  text-white">
+          <div className="flex p-10 flex-col justify-center md:text-left  text-center  text-white">
             <h1 className="text-2xl md:text-5xl mb-5 font-bold">
               Enjoy on your TV.
             </h1>
@@ -98,7 +98,7 @@ export default function Home() {
               Blu-ray players and more.
             </p>
           </div>
-          <div className="text-center ">
+          <div className="text-center md:order-last order-first">
             <img src="/assets/netflix1.png" />
           </div>
         </div>
@@ -106,7 +106,7 @@ export default function Home() {
           <div className="text-center">
             <img src="/assets/netflix2.jpg" />
           </div>
-          <div className="flex p-10 flex-col justify-center text-center  md:text-left  text-white">
+          <div className=" flex p-10 flex-col justify-center text-center  md:text-left  text-white">
             <h1 className="text-2xl md:text-5xl mb-5 font-bold">
               Download your shows to watch offline.
             </h1>
@@ -116,7 +116,7 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cold-1 md:grid-cols-2 ">
-          <div className="flex p-10 order-3 flex-col justify-center text-center md:text-left  text-white">
+          <div className="flex p-10 flex-col justify-center text-center md:text-left  text-white">
             <h1 className="text-2xl md:text-5xl mb-5 font-bold">
               Watch everywhere.
             </h1>
@@ -125,7 +125,7 @@ export default function Home() {
               laptop, and TV.
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-center  md:order-last order-first">
             <img src="/assets/netflix3.png" />
           </div>
         </div>
@@ -215,7 +215,7 @@ export default function Home() {
           ></input>
           <button className="w-2/6 bg-red-600 md:px-5 md:py-3 px-2 py-1 text-sm md:text-2xl flex flex-row justify-center items-center content-center">
             Get Started
-            <IoIosArrowForward />s{" "}
+            <IoIosArrowForward />
           </button>
         </div>
       </div>
