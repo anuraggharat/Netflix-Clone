@@ -155,7 +155,7 @@ const toggleModal=()=>{
             the kidnapped son of an imprisoned international crime lord.
           </p>
           <div className="mt-5 flex">
-            <Link href={"#"}>
+            <Link href="/user/play">
               <button className="bg-white text-lg flex items-center justify-center rounded-sm text-black py-1 px-10 ">
                 Play
               </button>
