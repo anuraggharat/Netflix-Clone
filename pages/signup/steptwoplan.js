@@ -72,71 +72,63 @@ const changePlan=(sel)=>{
           <p>Change or cancel your plan anytime.</p>
         </div>
         <div className="container mt-10 pb-10 ">
-          <div className="w-100 flex  ">
-            <div className="w-1/5 md:w-2/6 p-0"></div>
-            <div
-              className="w-1/5 md:w-2/6 flex flex-col justify-center  text-center items-center cursor-pointer"
-              onClick={() => changePlan("mobile")}
-            >
-              <div
+          <div className="w-100 flex py-10 text-xl  ">
+            <div className="md:w-2/6 w-1/5  md:text-md text-sm "></div>
+            <div className="w-1/5  md:w-1/6  text-sm  flex flex-col justify-center  text-center items-center cursor-pointer">
+              <button
                 className={
                   "w-14 h-14 md:w-28 md:h-28 text-sm font-normal md:text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
                   (selected == "mobile" ? "" : "opacity-40")
                 }
+                onClick={() => changePlan("mobile")}
               >
-                <p>Mobile</p>
-              </div>
+                Mobile
+              </button>
             </div>
-            <div
-              className="w-1/5 md:w-2/6 p-2 flex flex-col justify-center  text-center items-center cursor-pointer"
-              onClick={() => changePlan("basic")}
-            >
-              <div
+            <div className="w-1/5 md:w-1/6 p-2 flex flex-col justify-center  text-center items-center cursor-pointer">
+              <button
                 className={
                   "w-14 h-14 md:w-28 md:h-28 text-sm font-normal md:text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
                   (selected == "basic" ? "" : "opacity-40")
                 }
+                onClick={() => changePlan("basic")}
               >
-                <p>Basic</p>
-              </div>
+                Basic
+              </button>
             </div>
-            <div
-              className="w-1/5 md:w-2/6 p-2 flex flex-col justify-center    text-center items-center cursor-pointer"
-              onClick={() => changePlan("standard")}
-            >
-              <div
+            <div className="w-1/5  md:w-1/6  p-2 flex flex-col justify-center    text-center items-center cursor-pointer">
+              <button
                 className={
                   "w-14 h-14 md:w-28 md:h-28 text-sm font-normal md:text-xl flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
                   (selected == "standard" ? "" : "opacity-40")
                 }
+                onClick={() => changePlan("standard")}
               >
-                <p>Standard</p>
-              </div>
+                Standard
+              </button>
             </div>
-            <div
-              className="w-1/6 p-2 flex flex-col justify-center  text-center items-center cursor-pointer"
-              onClick={() => changePlan("premium")}
-            >
-              <div
+            <div className="w-1/5  md:w-1/6  p-2 flex flex-col justify-center  text-center items-center cursor-pointer">
+              <button
                 className={
                   "w-14 h-14 md:w-28 md:h-28 text-sm font-normal md:text-xl  flex rounded-sm flex-col justify-center  items-center bg-[#e50914] " +
                   (selected == "premium" ? "" : "opacity-40")
                 }
+                onClick={() => changePlan("premium")}
               >
-                <p>Premium</p>
-              </div>
+                Premium
+              </button>
             </div>
           </div>
-          <div className="w-100 flex py-10 text-xl">
-            <div className="w-1/6 md:w-2/6 md:text-md text-sm">
+          <div className="w-100 flex py-10  text-xl ">
+            <div className="md:w-2/6 w-1/5  md:text-md text-sm ">
               <p>Monthly Price</p>
             </div>
-            <div className="w-1/5 text-sm md:w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5  text-sm md:w-1/6  flex flex-col justify-center  text-center items-center">
               <p className={selected == "mobile" ? "text-white" : "opacity-40"}>
                 ₹ 149/-
               </p>
             </div>
-            <div className="w-1/5 text-sm md:w-1/6  flex flex-col justify-center  text-center items-center">
+            <div className="w-1/5  md:w-1/6  text-sm flex flex-col justify-center  text-center items-center">
               <p className={selected == "basic" ? "text-white" : "opacity-40"}>
                 ₹ 149/-
               </p>
