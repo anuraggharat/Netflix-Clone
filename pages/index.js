@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState,useEffect } from 'react'
 import Header from '../components/Header'
 import {IoIosArrowForward} from 'react-icons/io'
+import Component from './userlogin'
 
 const data = [
   {
@@ -88,6 +89,9 @@ export default function Home() {
         </div>
       </div>
       <div className="p-10 container mx-auto">
+        <div>
+          <Component />
+        </div>
         <div className="grid grid-cold-1 md:grid-cols-2 ">
           <div className="flex p-10 flex-col justify-center md:text-left  text-center  text-white">
             <h1 className="text-2xl md:text-5xl mb-5 font-bold">
