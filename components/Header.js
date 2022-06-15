@@ -4,11 +4,15 @@ import { useState, useEffect } from "react";
 import {BsSearch} from 'react-icons/bs'
 import {IoIosNotificationsOutline} from 'react-icons/io'
 import { AiFillCaretDown } from "react-icons/ai";
+import { useSession, signIn, signOut } from "next-auth/react";
+
 
 
 export default function Header() {
   const [header, setHeaderscrolled] = useState(false);
   const [dropDown, setDropdrown] = useState(false)
+  const { data: session } = useSession();
+
 
   useEffect(() => {
     const listener = () => {
@@ -52,7 +56,7 @@ export default function Header() {
           </svg>
         </Link>
       </div>
-      {loggedIn && (
+      {session && (
         <div className=" flex  md:flex flex-1 justify-between ">
           <div className="hidden px-10 md:flex items-center content-center">
             <ul className="flex text-white items-center justify-center align-middle content-center">
@@ -107,20 +111,25 @@ export default function Header() {
               />
             </div>
             <IoIosNotificationsOutline className="text-2xl mr-5 text-white" />
-            <Link href="/user/browse">
               <img
                 src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
-                className="w-10"
+                className="w-10 mr-5"
               />
-            </Link>
+            <button
+              className="bg-red-600 text-white py-2 px-6 "
+              onClick={() => signOut()}
+            >
+              Signout
+            </button>
           </div>
         </div>
       )}
-      {!loggedIn && (
+      {!session && (
         <div>
           <Link href="/signin">
             <a className="bg-red-600 text-white py-2 px-6 ">Signin</a>
           </Link>
+          
         </div>
       )}
     </div>

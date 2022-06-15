@@ -1,7 +1,16 @@
 import React from 'react'
 import Link from 'next/link';
+import { useSession, signIn, signOut } from "next-auth/react";
+
 
 export default function Registration() {
+  const { data: session } = useSession();
+
+
+  if (session) {
+    window.location.href="/user/browse"
+  }
+
   return (
     <div className="flex py-20 flex-row justify-center items-center text-white">
       <div className="w-5/6 md:w-1/2 mt-20 ">
@@ -9,7 +18,9 @@ export default function Registration() {
         <h1 className="font-bold text-2xl md:text-4xl my-5">
           Create a password to start your membership
         </h1>
-        <p className="my-2 md:text-xl">Just a few more steps and {"you're"} done!</p>
+        <p className="my-2 md:text-xl">
+          Just a few more steps and {"you're"} done!
+        </p>
         <p className="my-2  md:text-xl">We hate paperwork, too!</p>
         <div className="mt-2 py-4 w-100">
           <p className="text-xl">Email</p>
@@ -30,6 +41,19 @@ export default function Registration() {
             <a className="text-white block text-2xl rounded-md bg-red-600 text-center w-full p-3">
               Next
             </a>
+          </Link>
+        </div>
+        <div className="mt-2 py-4 w-100 text-center">
+          <h1 className='text-4xl font-thin'>OR</h1>
+        </div>
+        <div className="mt-2 py-4 w-100">
+          <Link href="/signup/steptwo">
+            <button
+              className="text-white block text-xl rounded-md border-white border-2  text-center w-full p-3"
+              onClick={() => signIn()}
+            >
+              Sign in using Google/GitHub.
+            </button>
           </Link>
         </div>
       </div>
