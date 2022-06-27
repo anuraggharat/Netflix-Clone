@@ -5,6 +5,8 @@ import {BsSearch} from 'react-icons/bs'
 import {IoIosNotificationsOutline} from 'react-icons/io'
 import { AiFillCaretDown } from "react-icons/ai";
 import { useSession, signIn, signOut } from "next-auth/react";
+import {VscAccount} from 'react-icons/vsc'
+import {FiSettings} from 'react-icons/fi'
 
 
 
@@ -12,6 +14,7 @@ export default function Header() {
   const [header, setHeaderscrolled] = useState(false);
   const [dropDown, setDropdrown] = useState(false)
   const { data: session } = useSession();
+  const [profile,setProfile]=useState(false)
 
 
   useEffect(() => {
@@ -31,6 +34,9 @@ export default function Header() {
   const handleDropDown=()=>{
     setDropdrown(!dropDown)
   }
+    const handleProfile = () => {
+      setProfile(!profile);
+    };
 
   const [loggedIn,setLoggedIn] = useState(true);
 
@@ -105,22 +111,43 @@ export default function Header() {
           <div className="flex items-center content-center">
             <div className="flex items-center mr-3 searchbox transition-all ease-in-out duration-500 ">
               <BsSearch className="text-xl mr-3 transition ease-in-out delay-150 text-white duration-1000" />
-              <input
-                className="border-[1px] px-2 hidden  delay-150  bg-transparent h-100 w-100 transition-all ease-in duration-1000"
-                placeholder="search"
-              />
+              
             </div>
             <IoIosNotificationsOutline className="text-2xl mr-5 text-white" />
-              <img
-                src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
-                className="w-10 mr-5"
-              />
-            <button
-              className="bg-red-600 text-white py-2 px-6 "
-              onClick={() => signOut()}
-            >
-              Signout
-            </button>
+            <div className="relative block ">
+              <div
+                className="bg-transparent flex	items-center text-white py-2 px-4 rounded cursor-pointer"
+                onClick={() => handleProfile()}
+              >
+                <img
+                  src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
+                  className="w-10 mr-1 "
+                />{" "}
+                <AiFillCaretDown />
+              </div>
+              <div
+                className={
+                  profile
+                    ? " origin-top-right absolute right-0 mt-2 p-5 w-56 rounded-md shadow-lg bg-white text-black ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    : "hidden "
+                }
+              >
+                <div className="flex align-middle items-center mb-2">
+                  <VscAccount />
+                  <p className="ml-2"> {session.user.name}</p>
+                </div>
+                <div className="flex align-middle items-center mb-2">
+                  <FiSettings />
+                  <p className="ml-2">Settings</p>
+                </div>
+                <button
+                  className="bg-red-600 text-white py-2 px-6 w-full "
+                  onClick={() => signOut()}
+                >
+                  Signout
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -129,7 +156,6 @@ export default function Header() {
           <Link href="/signin">
             <a className="bg-red-600 text-white py-2 px-6 ">Signin</a>
           </Link>
-          
         </div>
       )}
     </div>
