@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function EpisodeList({index,item}) {
   return (
-    <div className=" md:hover:bg-[#222] md:py-5 rounded-lg flex-col md:flex bg-opacity-70 mb-10 md:mb-5">
+    <div className=" md:hover:bg-[#222] md:py-5 rounded-lg  sm:flex bg-opacity-70 mb-10 md:mb-5">
       <div className="md:w-1/12 hidden md:flex justify-center items-center  h-100">
         <h1 className="text-4xl m-auto">{index+1}</h1>
       </div>

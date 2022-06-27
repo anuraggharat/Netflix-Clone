@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link';
 import { useSession, signIn, signOut } from "next-auth/react";
+import AuthComp from "../../components/AuthComp";
+
 
 
 export default function Registration() {
@@ -46,16 +48,7 @@ export default function Registration() {
         <div className="mt-2 py-4 w-100 text-center">
           <h1 className='text-4xl font-thin'>OR</h1>
         </div>
-        <div className="mt-2 py-4 w-100">
-          <Link href="/signup/steptwo">
-            <button
-              className="text-white block text-xl rounded-md border-white border-2  text-center w-full p-3"
-              onClick={() => signIn()}
-            >
-              Sign in using Google/GitHub.
-            </button>
-          </Link>
-        </div>
+        <AuthComp />
       </div>
     </div>
   );

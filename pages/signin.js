@@ -1,7 +1,16 @@
 import React from 'react'
 import Link from "next/link";
+import AuthComp from '../components/AuthComp'
+import { useSession, signIn, signOut } from "next-auth/react";
+
+
 
 export default function Signin() {
+  const { data: session } = useSession();
+
+  if (session) {
+    window.location.href = "/user/browse";
+  }
   return (
     <div className="hero min-h-screen text-white flex flex-col justify-center items-center">
       <div className="bg-[#000] bg-opacity-70 w-100 md:w-2/6 py-10 px-12">
@@ -22,11 +31,12 @@ export default function Signin() {
             type="password"
           />
         </div>
-        <div className="w-100 my-5">
+        <div className="w-100 my-2">
           <button className="p-3 w-full text-xl bg-red-600 rounded-md">
             Sign In
           </button>
         </div>
+        <AuthComp />
         <div className="flex flex-row justify-between my-5 text-[#737373]">
           <div className="flex flex-row items-center">
             <input className="border-0 mr-2 text-[#737373] bg-[#737373]" type="checkbox" />

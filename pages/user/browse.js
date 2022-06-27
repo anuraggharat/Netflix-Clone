@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import MovieList from "../../components/MovieList";
 import MovieModal from "../../components/MovieModal";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter,Router } from "next/router";
+
 
 
 export default function Browse(props) {
   console.log(props)
-const [modal, setModal] = useState(false);
-const [curr,setCurr]=useState(null)
-const toggleModal=()=>{
+  const [modal, setModal] = useState(false);
+  const [curr,setCurr]=useState(null)
+  const { data: session } = useSession();
+  const router = useRouter()
+  const toggleModal=()=>{
   
   setModal(!modal)
 }
 
+
+  
+  
   return (
     <div className=" min-h-screen text-white flex flex-col justify-center items-center">
       <div className="home-browse relative">
