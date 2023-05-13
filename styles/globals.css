@@ -2,75 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.hero{
-    background:linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url('/assets/netflixbg.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+    @apply bg-zinc-900 h-full overflow-x-hidden;
 }
-/* Style the video: 100% width and height to cover the entire window */
-#background-video {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100vh;
+
+#__next {
+    @apply h-full;
 }
-body{
-    transition: 1s all ease-in;
-}
-/* Add some content at the bottom of the video/page */
-.content {
-    position: absolute;
-    bottom: 20%;
-    color: #f1f1f1;
-}
-.flex-movies{
-    display: flex;
-    overflow-x: auto;
-    width: auto !important;
-    flex-wrap: nowrap;
-}
-.flex-movies div{
-    width: 900px !important;
-    background-color: aquamarine;
-}
-.flex-movies div img {
-    width: 500px;
-}
-.home-browse{
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('/assets/extraction.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.hide-scroll-bar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.bg-gradient{
-    background: rgb(48, 48, 48);
-        background: linear-gradient(180deg, rgba(48, 48, 48, 1) 0%, rgba(0, 0, 0, 1) 72%);
-}
-.hide-scroll-bar::-webkit-scrollbar {
-    display: none;
-}
-/* .moviecard:hover{
-    transform: scale(1.1);
-}
-.moviecard:hover > .hidtext{
-    display: block;
-}
-.hidtext{
-    display: none;
-} */
-.searchbox{
-    transition: 0.5s ease-in all;   
-    cursor: pointer; 
-}
-.searchbox:hover input{
-    display: block;
-    transition: 0.5s ease-in;
+
+html {
+    @apply h-full;
 }
