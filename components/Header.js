@@ -11,14 +11,14 @@ import {FiSettings} from 'react-icons/fi'
 
 
 export default function Header(props) {
-  const [header, setHeaderscrolled] = useState(false);
+  const [headerScrolled, setHeaderscrolled] = useState(false);
   const [dropDown, setDropdrown] = useState(false)
   const [profile,setProfile]=useState(false)
   const {user} = props
 
   useEffect(() => {
     const listener = () => {
-      if (window.scrollY > 140) {
+      if (window.scrollY > 50) {
         setHeaderscrolled(true);
       } else setHeaderscrolled(false);
     };
@@ -40,18 +40,16 @@ export default function Header(props) {
 
   return (
     <div
-      className={
-        header
-          ? `fixed top-0 left-0 w-screen z-10 bg-black flex justify-between align-middle items-center px-5 py-5 md:py-5 md:px-10`
-          : `fixed  top-0 left-0 w-screen z-10 flex justify-between align-middle items-center px-5 py-5 md:py-5 md:px-10`
-      }
+      className={`fixed top-0 left-0 w-screen z-10 flex flex-row items-center justify-between align-middle py-5 px-5 md:px-10 ${
+        headerScrolled ? "bg-black" : "bg-transparent"
+      }`}
     >
       <div>
         <Link href={"/"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0.238 0.034 919.406 248.488"
-            className="w-28 cursor-pointer"
+            className="w-20 cursor-pointer"
           >
             <path
               fill="#e50914"
@@ -60,94 +58,85 @@ export default function Header(props) {
           </svg>
         </Link>
       </div>
-      {user && (
-        <div className=" flex  md:flex flex-1 justify-between ">
-          <div className="hidden px-10 md:flex items-center content-center">
-            <ul className="flex text-white items-center justify-center align-middle content-center">
-              <li className="mr-5">Home</li>
-              <li className="mr-5">TV shows</li>
-              <li className="mr-5">Movies</li>
-              <li className="mr-5">New & Popular</li>
-              <li className="mr-5">My List</li>
-              <li className="mr-5">Audio & Subtitles</li>
-            </ul>
+      <div className=" flex  md:flex flex-1 justify-between">
+        <div className="hidden px-10 md:flex items-center content-center">
+          <div className="flex text-white items-center justify-center align-middle content-center">
+            <p className="mr-5">Home</p>
+            <p className="mr-5">TV shows</p>
+            <p className="mr-5">Movies</p>
+            <p className="mr-5">New & Popular</p>
+            <p className="mr-5">My List</p>
+            <p className="mr-5">Audio & Subtitles</p>
           </div>
-          <div className="relative block md:hidden">
-            <p
-              className="bg-transparent flex	items-center text-white py-2 px-4 rounded"
-              onClick={() => handleDropDown()}
-            >
-              Browse <AiFillCaretDown />
+        </div>
+        <div className="relative flex flex-row ml-auto md:hidden">
+          <p
+            className="flex flex-row	items-center text-white py-2 px-4 rounded"
+            onClick={() => handleDropDown()}
+          >
+            Browse <AiFillCaretDown />
+          </p>
+          <div
+            className={
+              dropDown
+                ? "fixed top-20 w-auto rounded-md shadow-lg bg-black text-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                : "hidden "
+            }
+          >
+            <p href="#" className=" block px-4 py-2 text-sm">
+              Home
             </p>
+            <p href="#" className=" block px-4 py-2 text-sm">
+              TV shows
+            </p>
+            <p href="#" className=" block px-4 py-2 text-sm">
+              Movies
+            </p>
+            <p href="#" className=" block px-4 py-2 text-sm">
+              New & Popular
+            </p>
+            <p href="#" className=" block px-4 py-2 text-sm">
+              My List
+            </p>
+            <p href="#" className=" block px-4 py-2 text-sm">
+              Audio and Subtitle
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center content-center">
+          <div className="hidden md:flex items-center mr-3 searchbox transition-all ease-in-out duration-500 ">
+            <BsSearch className="text-xl mr-3 transition ease-in-out delay-150 text-white duration-1000" />
+          </div>
+          <div className="md:flex hidden">
+            <IoIosNotificationsOutline className="text-2xl mr-5 text-white" />
+          </div>
+          <div className="relative block ">
+            <div
+              className="bg-transparent flex	items-center text-white py-2 px-4 rounded cursor-pointer"
+              onClick={() => handleProfile()}
+            >
+              <img
+                src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
+                className="w-10 mr-1 "
+              />{" "}
+              <AiFillCaretDown />
+            </div>
             <div
               className={
-                dropDown
-                  ? " origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-black bg-opacity-80 text-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                profile
+                  ? "flex flex-col gap-3 items-start origin-top-right absolute right-0 mt-2 p-5 w-56 rounded-md shadow-lg bg-black text-white"
                   : "hidden "
               }
             >
-              <a href="#" className=" block px-4 py-2 text-sm">
-                Home
-              </a>
-              <a href="#" className=" block px-4 py-2 text-sm">
-                TV shows
-              </a>
-              <a href="#" className=" block px-4 py-2 text-sm">
-                Movies
-              </a>
-              <a href="#" className=" block px-4 py-2 text-sm">
-                New & Popular
-              </a>
-              <a href="#" className=" block px-4 py-2 text-sm">
-                My List
-              </a>
-              <a href="#" className=" block px-4 py-2 text-sm">
-                Audio & Subtitles
-              </a>
-            </div>
-          </div>
-          <div className="flex items-center content-center">
-            <div className="flex items-center mr-3 searchbox transition-all ease-in-out duration-500 ">
-              <BsSearch className="text-xl mr-3 transition ease-in-out delay-150 text-white duration-1000" />
-            </div>
-            <IoIosNotificationsOutline className="text-2xl mr-5 text-white" />
-            <div className="relative block ">
-              <div
-                className="bg-transparent flex	items-center text-white py-2 px-4 rounded cursor-pointer"
-                onClick={() => handleProfile()}
-              >
-                <img
-                  src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
-                  className="w-10 mr-1 "
-                />{" "}
-                <AiFillCaretDown />
-              </div>
-              <div
-                className={
-                  profile
-                    ? " origin-top-right absolute right-0 mt-2 p-5 w-56 rounded-md shadow-lg bg-white text-black ring-1 ring-black ring-opacity-5 focus:outline-none"
-                    : "hidden "
-                }
-              >
-                <div className="flex align-middle items-center mb-2">
-                  <VscAccount />
-                  <p className="ml-2"> {user.name}</p>
-                </div>
-                <div className="flex align-middle items-center mb-2">
-                  <FiSettings />
-                  <p className="ml-2">Settings</p>
-                </div>
-                <button
-                  className="bg-red-600 text-white py-2 px-6 w-full "
-                  onClick={() => signOut()}
-                >
-                  Signout
-                </button>
-              </div>
+              <p className="">{user.name}</p>
+              <p className="">Settings</p>
+              <button className=" text-white" onClick={() => signOut()}>
+                Signout
+              </button>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
