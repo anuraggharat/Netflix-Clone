@@ -7,6 +7,7 @@ import { useRouter,Router } from "next/router";
 import { NextPageContext } from "next";
 import Header from "@/components/Header";
 import useCurrentUser from "hooks/useCurrentUser";
+import HomeVideo from "@/components/HomeVideo";
 
 //this is the main page. We will have an API which will give all the movies that we can watch.
 
@@ -39,29 +40,8 @@ export default function Browse(props:BrowsePageProps) {
     <div className="relative">
       <Header user={data} />
 
-    <div className=" min-h-screen text-white flex flex-col justify-center items-center mt-28">
-      {/* <div className="home-browse relative">
-        <div className="absolute bottom-24 ml-5 md:ml-10 w-100 md:w-1/2">
-          <h1 className="text-7xl font-medium text-white my-4">Extraction</h1>
-          <p>
-            A black-market mercenary who has nothing to lose is hired to rescue
-            the kidnapped son of an imprisoned international crime lord.
-          </p>
-          <div className="mt-5 flex">
-            <Link href="/user/play">
-              <button className="bg-white text-lg flex items-center justify-center rounded-sm text-black py-1 px-10 ">
-                Play
-              </button>
-            </Link>
-            <Link href={"#"}>
-              <button className="ml-5 text-lg flex items-center justify-center rounded-sm bg-gray-300 bg-opacity-25 text-white px-10 ">
-                More info
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div> */}
-
+    <div className=" min-h-screen text-white flex flex-col justify-center items-center">
+      <HomeVideo />
       <div className="max-w-full pl-5 md:pl-10 mt-5">
         <MovieList
           data={props.trending}
