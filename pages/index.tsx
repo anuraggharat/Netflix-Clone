@@ -40,7 +40,7 @@ export default function Home() {
   
   const[accClicked,setAccClicked]=useState(null)
 
-  const toggleAccordion=(id)=>{
+  const toggleAccordion=(id:any)=>{
     if (id==accClicked) {
       return setAccClicked(null)
     }
@@ -79,10 +79,8 @@ export default function Home() {
               placeholder="Email Address"
             ></input>
             <Link href={"/signup/registration"}>
-              <a className="w-2/6 bg-red-600 px-1 md:px-5 md:py-3 text-sm md:text-2xl flex flex-row justify-center items-center content-center">
                 Get Started
                 <IoIosArrowForward />
-              </a>
             </Link>
           </div>
         </div>
