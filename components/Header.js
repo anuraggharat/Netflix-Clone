@@ -4,18 +4,17 @@ import { useState, useEffect } from "react";
 import {BsSearch} from 'react-icons/bs'
 import {IoIosNotificationsOutline} from 'react-icons/io'
 import { AiFillCaretDown } from "react-icons/ai";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import {VscAccount} from 'react-icons/vsc'
 import {FiSettings} from 'react-icons/fi'
 
 
 
-export default function Header() {
+export default function Header(props) {
   const [header, setHeaderscrolled] = useState(false);
   const [dropDown, setDropdrown] = useState(false)
-  const { data: session } = useSession();
   const [profile,setProfile]=useState(false)
-
+  const {user} = props
 
   useEffect(() => {
     const listener = () => {
@@ -38,14 +37,13 @@ export default function Header() {
       setProfile(!profile);
     };
 
-  const [loggedIn,setLoggedIn] = useState(true);
 
   return (
     <div
       className={
         header
-          ? `fixed w-screen z-10 bg-black flex justify-between align-middle items-center px-5 py-5 md:py-5 md:px-10`
-          : `fixed w-screen z-10 flex justify-between align-middle items-center px-5 py-5 md:py-5 md:px-10`
+          ? `fixed top-0 left-0 w-screen z-10 bg-black flex justify-between align-middle items-center px-5 py-5 md:py-5 md:px-10`
+          : `fixed  top-0 left-0 w-screen z-10 flex justify-between align-middle items-center px-5 py-5 md:py-5 md:px-10`
       }
     >
       <div>
@@ -62,7 +60,7 @@ export default function Header() {
           </svg>
         </Link>
       </div>
-      {session && (
+      {user && (
         <div className=" flex  md:flex flex-1 justify-between ">
           <div className="hidden px-10 md:flex items-center content-center">
             <ul className="flex text-white items-center justify-center align-middle content-center">
@@ -111,7 +109,6 @@ export default function Header() {
           <div className="flex items-center content-center">
             <div className="flex items-center mr-3 searchbox transition-all ease-in-out duration-500 ">
               <BsSearch className="text-xl mr-3 transition ease-in-out delay-150 text-white duration-1000" />
-              
             </div>
             <IoIosNotificationsOutline className="text-2xl mr-5 text-white" />
             <div className="relative block ">
@@ -134,7 +131,7 @@ export default function Header() {
               >
                 <div className="flex align-middle items-center mb-2">
                   <VscAccount />
-                  <p className="ml-2"> {session.user.name}</p>
+                  <p className="ml-2"> {user.name}</p>
                 </div>
                 <div className="flex align-middle items-center mb-2">
                   <FiSettings />
@@ -149,13 +146,6 @@ export default function Header() {
               </div>
             </div>
           </div>
-        </div>
-      )}
-      {!session && (
-        <div>
-          <Link href="/signin">
-            <a className="bg-red-600 text-white py-2 px-6 ">Signin</a>
-          </Link>
         </div>
       )}
     </div>

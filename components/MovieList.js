@@ -7,8 +7,8 @@ export default function MovieList({ data, title, toggleModal }) {
       <div className="my-5">
         <h1 className="mb-2 text-xl font-bold">{title}</h1>
       </div>
-      <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
-        <div className="flex flex-nowrap ">
+      <div className="flex pb-10">
+        <div className="flex flex-nowrap hide-scroll-bar overflow-x-scroll flex-movies">
           {data.map((item, index) => (
             <MovieCard item={item} key={index} toggleModal={toggleModal} />
           ))}

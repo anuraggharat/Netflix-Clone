@@ -3,6 +3,9 @@ import Link from 'next/link'
 import { useState,useEffect } from 'react'
 import Header from '../components/Header'
 import {IoIosArrowForward} from 'react-icons/io'
+import { getSession, signOut } from 'next-auth/react'
+import { NextPageContext } from 'next'
+import useCurrentUser from 'hooks/useCurrentUser'
 
 const data = [
   {
@@ -47,6 +50,7 @@ export default function Home() {
     setAccClicked(id)
   }
   
+  const {data:user} = useCurrentUser();
     
 
   return (
@@ -70,7 +74,7 @@ export default function Home() {
           <p className="text-xl lg:text-2xl">Watch anywhere. Cancel anytime.</p>
           <p className="mt-6 text-xl">
             Ready to watch? Enter your email to create or restart your
-            membership.
+            membership. {user?.email}
           </p>
           <div className="flex justify-center w-full mt-4">
             <input
@@ -82,6 +86,9 @@ export default function Home() {
                 Get Started
                 <IoIosArrowForward />
             </Link>
+            <button className='p-5 bg-red-600 text-white'  onClick={()=>{signOut()}}>
+              Signout
+            </button>
           </div>
         </div>
       </div>
@@ -220,4 +227,23 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context: NextPageContext) {
+  const session = await getSession(context);
+
+  //check if session is present. If no session, just redirect to auth screen 
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/auth',
+        permanent: false,
+      }
+    }
+  }
+
+
+  return {
+    props: {}
+  }
 }

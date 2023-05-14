@@ -2,17 +2,31 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import MovieList from "../../components/MovieList";
 import MovieModal from "../../components/MovieModal";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import { useRouter,Router } from "next/router";
+import { NextPageContext } from "next";
+import Header from "@/components/Header";
+import useCurrentUser from "hooks/useCurrentUser";
 
+//this is the main page. We will have an API which will give all the movies that we can watch.
 
+interface BrowsePageProps {
+  trending:any;
+  hollywoodMovies:any;
+  popular:any;
+  usShows:any;
+  bollywoodMovies:any
 
-export default function Browse(props) {
+}
+
+export default function Browse(props:BrowsePageProps) {
   console.log(props)
   const [modal, setModal] = useState(false);
   const [curr,setCurr]=useState(null)
   const { data: session } = useSession();
   const router = useRouter()
+  const {data} = useCurrentUser()
+
   const toggleModal=()=>{
   
   setModal(!modal)
@@ -22,8 +36,11 @@ export default function Browse(props) {
   
   
   return (
-    <div className=" min-h-screen text-white flex flex-col justify-center items-center">
-      <div className="home-browse relative">
+    <div className="relative">
+      <Header user={data} />
+
+    <div className=" min-h-screen text-white flex flex-col justify-center items-center mt-28">
+      {/* <div className="home-browse relative">
         <div className="absolute bottom-24 ml-5 md:ml-10 w-100 md:w-1/2">
           <h1 className="text-7xl font-medium text-white my-4">Extraction</h1>
           <p>
@@ -43,7 +60,7 @@ export default function Browse(props) {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="max-w-full pl-5 md:pl-10 mt-5">
         <MovieList
@@ -74,15 +91,28 @@ export default function Browse(props) {
       </div>
       {modal && <MovieModal toggleModal={toggleModal} item={curr} />}
     </div>
+    </div>
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context:NextPageContext) {
+
+  const session = await getSession(context);
+
+  //check if user session is present
+   if (!session) {
+    return {
+      redirect: {
+        destination: '/auth',
+        permanent: false,
+      }
+    }
+  }
   //make your API request here
   const res = await fetch(`http://localhost:3000/api/movies`);
-  const data = await res.json();
+  const movies = await res.json();
 
   return {
-    props: data
+    props: movies
   };
 }
