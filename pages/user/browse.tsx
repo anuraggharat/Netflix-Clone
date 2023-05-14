@@ -8,6 +8,8 @@ import { NextPageContext } from "next";
 import Header from "@/components/Header";
 import useCurrentUser from "hooks/useCurrentUser";
 import HomeVideo from "@/components/HomeVideo";
+import useMovies from "hooks/useMovieList";
+import MovieCard from "@/components/MovieCard";
 
 //this is the main page. We will have an API which will give all the movies that we can watch.
 
@@ -20,14 +22,12 @@ interface BrowsePageProps {
 
 }
 
-export default function Browse(props:BrowsePageProps) {
-  console.log(props)
+export default function Browse() {
   const [modal, setModal] = useState(false);
   const [curr,setCurr]=useState(null)
-  const { data: session } = useSession();
-  const router = useRouter()
-  const {data} = useCurrentUser()
-
+  const {data:user} = useCurrentUser()
+  const { data: movies = [] } = useMovies();
+  console.log(movies)
   const toggleModal=()=>{
   
   setModal(!modal)
@@ -38,11 +38,17 @@ export default function Browse(props:BrowsePageProps) {
   
   return (
     <div className="relative">
-      <Header user={data} />
+      <Header user={user} />
 
-    <div className=" min-h-screen text-white flex flex-col justify-center items-center">
+    <div className=" min-h-screen text-white flex flex-col justify-center items-center mb-60">
       <HomeVideo />
-      <div className="max-w-full pl-5 md:pl-10 mt-5">
+      <div className="max-w-full pl-5 md:pl-10 mt-5 mb-40">
+        <MovieList
+          data={movies}
+          title="Trending on Netflix"
+        />
+        </div>
+      {/* <div className="max-w-full pl-5 md:pl-10 mt-5">
         <MovieList
           data={props.trending}
           title="Trending on Netflix"
@@ -68,7 +74,7 @@ export default function Browse(props:BrowsePageProps) {
           title="Bollywood Movies"
           toggleModal={toggleModal}
         />
-      </div>
+      </div> */}
       {modal && <MovieModal toggleModal={toggleModal} item={curr} />}
     </div>
     </div>
@@ -80,19 +86,19 @@ export async function getServerSideProps(context:NextPageContext) {
   const session = await getSession(context);
 
   //check if user session is present
-   if (!session) {
-    return {
-      redirect: {
-        destination: '/auth',
-        permanent: false,
-      }
-    }
-  }
+  //  if (!session) {
+  //   return {
+  //     redirect: {
+  //       destination: '/auth',
+  //       permanent: false,
+  //     }
+  //   }
+  // }
   //make your API request here
   const res = await fetch(`http://localhost:3000/api/movies`);
   const movies = await res.json();
 
   return {
-    props: movies
+    props: {}
   };
 }

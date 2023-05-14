@@ -128,7 +128,7 @@ export default function Header(props) {
                   : "hidden "
               }
             >
-              <p className="">{user.name}</p>
+              <p className="">{user?.name}</p>
               <p className="">Settings</p>
               <button className=" text-white" onClick={() => signOut()}>
                 Signout
