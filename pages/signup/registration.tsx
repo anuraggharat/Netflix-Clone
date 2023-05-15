@@ -40,9 +40,7 @@ export default function Registration() {
         </div>
         <div className="mt-2 py-4 w-100">
           <Link href="/signup/steptwo">
-            <a className="text-white block text-2xl rounded-md bg-red-600 text-center w-full p-3">
               Next
-            </a>
           </Link>
         </div>
         <div className="mt-2 py-4 w-100 text-center">

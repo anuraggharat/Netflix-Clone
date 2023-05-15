@@ -161,7 +161,7 @@ export default function Header(props:HeaderProps) {
       </div>
       )}
         {!user && (
-          <button onClick={()=>router.push('/auth')} className='flex flex-row items-center py-2 px-5 bg-red-700 font-semibold'>
+          <button onClick={()=>router.push('/auth')} className='flex flex-row items-center py-2 px-5 bg-red-600 font-semibold'>
                 Sign In
         </button>  
         )}

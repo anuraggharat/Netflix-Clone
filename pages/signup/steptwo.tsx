@@ -75,9 +75,7 @@ export default function Steptwo() {
         </div>
         <div className="mt-2 py-4 w-100">
           <Link href="/signup/steptwoplan">
-            <a className="text-white  block text-2xl rounded-md bg-[#e50914] text-center w-full p-3">
               Next
-            </a>
           </Link>
         </div>
       </div>

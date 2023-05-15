@@ -3,9 +3,10 @@ import { BsPhone, BsTablet , } from "react-icons/bs";
 import {HiOutlineDesktopComputer} from 'react-icons/hi'
 import {FiMonitor} from 'react-icons/fi'
 import Link from "next/link";
+import { IoIosArrowForward } from 'react-icons/io';
 
 
-export default function Steptwoplan() {
+export default function Plan() {
 
 const[selected,setSelected]=useState("basic");
 
@@ -16,10 +17,17 @@ const changePlan=(sel:any)=>{
   return (
     <div className="py-40 z-0">
       <div className=" w-5/6 md:w-4/6 flex flex-col text-white m-auto">
-        <p className="text-2xl my-2">Step 2 of 3</p>
-        <h1 className="text-4xl my-2 font-bold">
+        <div className='flex flex-row justify-between items-center'>
+            <h1 className="text-4xl my-2 font-bold">
           Choose the plan {"that's"} right for you
         </h1>
+        <div className='text-xl flex flex-row justify-between items-center'>
+        <Link href={'/profiles'}>
+          Next
+        </Link>
+          <IoIosArrowForward />
+        </div>
+        </div>
         <div className="flex flex-row text-xl my-2 items-center justify-start">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -281,9 +289,6 @@ const changePlan=(sel:any)=>{
             may use your account. Watch on 4 different devices at the same time
             with Premium, 2 with Standard, and 1 with Basic and Mobile.
           </p>
-          <Link href="/signup/stepthree">
-              Next
-          </Link>
         </div>
       </div>
     </div>

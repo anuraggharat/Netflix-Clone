@@ -47,9 +47,7 @@ export default function MovieModal({item,toggleModal}) {
             </div>
             <div className="flex justify-start">
               <Link href="/user/play">
-                <a className="px-4 py-1 md:px-10 text-xs md:text-lg  md:py-2 bg-white flex items-center  font-medium rounded text-black mr-2 md:mr-5">
                   Play
-                </a>
               </Link>
               <button className="rounded-lg md:p-3 p-1 bg-white mr-2 md:mr-5  ">
                 <AiOutlinePlus className="text-xs md:text-lg text-black" />

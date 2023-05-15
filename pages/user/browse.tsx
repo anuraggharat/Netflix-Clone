@@ -13,6 +13,7 @@ import MovieCard from "@/components/MovieCard";
 import useFavorites from "hooks/useFavorites";
 import InfoModal from "@/components/InfoModal";
 import useInfoModalStore from "hooks/useInfoModalStore";
+import Footer from "@/components/Footer";
 
 //this is the main page. We will have an API which will give all the movies that we can watch.
 
@@ -26,7 +27,7 @@ interface BrowsePageProps {
 }
 
 export default function Browse() {
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
   const [curr,setCurr]=useState(null)
   const {data:user} = useCurrentUser()
   const { data: movies = [] } = useMovies();
@@ -88,6 +89,7 @@ export default function Browse() {
       </div> */}
       {modal && <MovieModal toggleModal={toggleModal} item={curr} />}
     </div>
+    <Footer />
     </div>
   );
 }

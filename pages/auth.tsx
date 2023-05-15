@@ -8,6 +8,7 @@ import { FaGithub } from 'react-icons/fa';
 import axios from 'axios'
 import {useRouter} from 'next/router'
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 export default function auth() {
 
@@ -63,11 +64,11 @@ export default function auth() {
 
   const handleGoogleSignin = () =>{
     try {
-      signIn('google',{ callbackUrl: '/profiles' }).then(res=>{
+      signIn('google',{ callbackUrl: '/plan' }).then(res=>{
         toast.success('Signin Success')
-        router.push('/profiles')
+        router.push('/plan')
       }).catch(err=>toast.error('Somgthing went wrong'))
-    router.push('/profiles')
+    router.push('/plan')
 
     } catch (error) {
       toast.error('Something Went wrong')
@@ -76,11 +77,11 @@ export default function auth() {
 
   const handleGithubSignin = () => {
     try {
-      signIn('github',{ callbackUrl: '/profiles' }).then(res=>{
+      signIn('github',{ callbackUrl: '/plan' }).then(res=>{
         toast.success('Signin Success')
-        router.push('/profiles')
+        router.push('/plan')
       }).catch(err=>toast.error('Somgthing went wrong'))
-    router.push('/profiles')
+    router.push('/plan')
 
     } catch (error) {
       toast.error('Something Went wrong')
@@ -91,12 +92,13 @@ export default function auth() {
 
   return (
     <div className="relative h-full w-full bg-[url('/assets/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-      <div className="bg-black w-full h-full lg:bg-opacity-70">
-        <nav className="px-12 py-5">
-          <img src="/assets/logo.png" className="h-8" alt="Logo" />
+      <div className="bg-black w-full h-full lg:bg-opacity-70 flex flex-col justify-center items-center">
+        <nav className="top-5 left-5 absolute">
+          <Link href={'/'}>
+                  <img src="/assets/logo.png" className="h-8" alt="Logo" />
+          </Link>
         </nav>
-        <div className="flex justify-center">
-          <div className="bg-black bg-opacity-80 px-10 py-10 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-xl w-full">
+          <div className="lg:w-2/5 w-full transition-all bg-black bg-opacity-80 px-10 py-10 self-center mt-2  lg:max-w-md rounded-xl">
             <h2 className="text-white text-4xl mb-8 font-semibold">
               {variant === 'login' ? 'Sign in' : 'Register'}
             </h2>
@@ -144,7 +146,6 @@ export default function auth() {
               .
             </p>
           </div>
-        </div>
       </div>
     </div>
   )
