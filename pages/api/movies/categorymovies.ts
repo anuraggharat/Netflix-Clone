@@ -8,8 +8,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(405).end();
     }
     await serverAuth(req, res);
-    const movies = await prismadb.movie.findMany();
-    return res.status(200).json(movies);
+    if (req.query.category && typeof req.query.category === 'string' ) {
+        let category = req.query.category
+        const categoryMovies = await prismadb.movie.findMany({
+        where:{
+          genre:category
+        }
+      });
+      return res.status(200).json(categoryMovies);
+    }
   } catch (error) {
     console.log({ error })
     return res.status(500).end();

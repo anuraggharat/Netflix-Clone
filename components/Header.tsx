@@ -75,7 +75,7 @@ export default function Header(props:HeaderProps) {
       {user && (
               <div className=" flex  md:flex flex-1 justify-between">
         <div className="hidden px-10 md:flex items-center content-center">
-          <div className="flex text-white items-center justify-center align-middle content-center">
+          <div className="flex text-white items-center justify-center align-middle content-center text-lg">
             <p className="mr-5">
               <Link href={'/user/browse'}>Home</Link>
             </p>
@@ -108,7 +108,7 @@ export default function Header(props:HeaderProps) {
                 : "hidden "
             }
           >
-            <p className=" block px-4 py-2 text-sm">
+            <p className=" block px-4 py-2 text-md">
               <Link href={'/user/browse'}>Home</Link>
             </p>
             <p className=" block px-4 py-2 text-sm">

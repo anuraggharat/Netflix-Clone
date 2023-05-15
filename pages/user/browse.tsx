@@ -10,6 +10,7 @@ import useFavorites from "hooks/useFavorites";
 import InfoModal from "@/components/InfoModal";
 import useInfoModalStore from "hooks/useInfoModalStore";
 import Footer from "@/components/Footer";
+import useCategoryMovies from "hooks/useCategoryMovies";
 
 //this is the main page. We will have an API which will give all the movies that we can watch.
 
@@ -24,8 +25,12 @@ interface BrowsePageProps {
 
 export default function Browse() {
   const {data:user} = useCurrentUser()
-  const { data: movies = [] } = useMovies();
+  const {data:featuredMovies} =useCategoryMovies('featured')
+  const { data: allMovies = [] } = useMovies();
   const { data: favorites = [] } = useFavorites();
+  const {data:thrillerMovies} =useCategoryMovies('thriller')
+  const {data:dramaMovies} =useCategoryMovies('drama')
+
   const {isOpen, closeModal} = useInfoModalStore();
   
   
@@ -37,8 +42,20 @@ export default function Browse() {
       <HomeVideo />
       <div className="max-w-full pl-5 md:pl-10 mt-5 mb-40">
         <MovieList
-          data={movies}
+          data={featuredMovies}
           title="Trending on Netflix"
+        />
+        <MovieList
+          data={allMovies}
+          title="Popular on Netflix"
+        />
+        <MovieList
+          data={dramaMovies}
+          title="Popular in Drama"
+        />
+        <MovieList
+          data={thrillerMovies}
+          title="Popular in Thriller"
         />
         <MovieList
           data={favorites}

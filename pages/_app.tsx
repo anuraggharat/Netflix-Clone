@@ -1,4 +1,3 @@
-import Layout from '../components/Layout'
 import '../styles/globals.css'
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from 'react-hot-toast';
