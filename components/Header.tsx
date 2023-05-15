@@ -6,6 +6,7 @@ import {IoIosNotificationsOutline} from 'react-icons/io'
 import { AiFillCaretDown } from "react-icons/ai";
 import { signOut } from "next-auth/react";
 import { useRouter } from 'next/router';
+import { toast } from 'react-hot-toast';
 
 interface HeaderProps {
   user:any
@@ -43,9 +44,12 @@ export default function Header(props:HeaderProps) {
     signOut()
     .then(()=>{
       setDropdrown(false)
+      toast.success('Logout Success')
       router.push('/')
     })
-    .catch(()=>{alert("Something went wrong, try again!")})
+    .catch(()=>{
+      toast.error('Something went wrong.')
+    })
   }
 
   return (

@@ -7,6 +7,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import axios from 'axios'
 import {useRouter} from 'next/router'
+import toast from 'react-hot-toast';
 
 export default function auth() {
 
@@ -30,14 +31,14 @@ export default function auth() {
     try {
       await signIn('credentials', {email,password,redirect: false,callbackUrl: '/'})
       .then((res)=>{
-        //raise a toast here
-
+        toast.success('Signin Success')
         router.push('/profiles')
       }).catch(error=>{
-        //raise a toast for error
+        toast.error('Something went wrong!')
         console.log(error)
       })
     } catch (error) {
+        toast.error('Something went wrong!')
       console.log(error);
     }
   }, [email, password, router]);
@@ -47,14 +48,15 @@ export default function auth() {
       await axios.post('/api/register', {email,name,password})
       .then(res=>{
         console.log(res)
-        //raise a toast again
+        toast.success('Signup success, redirecting to home page.')
       }).catch(error=>{
-        //raise a toast for error
+        toast.error('Something went wrong')
         console.log(error)
       });
 
       login();
     } catch (error) {
+        toast.error('Something went wrong')
         console.log(error);
     }
   }, [email, name, password, login]);
