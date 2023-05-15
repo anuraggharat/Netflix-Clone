@@ -6,6 +6,7 @@ import {IoIosArrowForward} from 'react-icons/io'
 import { getSession, signOut } from 'next-auth/react'
 import { NextPageContext } from 'next'
 import useCurrentUser from 'hooks/useCurrentUser'
+import Footer from '@/components/Footer'
 
 const data = [
   {
@@ -69,7 +70,7 @@ export default function Home() {
       <Header user={user}  />
 
       <div className="relative h-screen w-screen bg-[url('/assets/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-      <div className="bg-black w-full h-full lg:bg-opacity-70 flex flex-col justify-center items-center ">
+      <div className="bg-black w-full h-full bg-opacity-70 flex flex-col justify-center items-center ">
         
         <div className=''></div>
         <div className="w-5/6 md:w-1/2 text-center flex flex-col justify-center  items-center">
@@ -81,13 +82,13 @@ export default function Home() {
             Ready to watch? Enter your email to create or restart your
             membership. {user?.email}
           </p>
-          <div className="flex flex-row  justify-center w-full mt-4">
+          <div className="flex flex-col lg:flex-row  justify-center w-full mt-4 gap-2 lg:gap-0">
             <input
               type="email"
-              className="w-4/6 md:px-5 px-2 py-5 text-md"
+              className="w-full lg:w-4/6 lg:px-5 p-2 lg:py-5 text-md"
               placeholder="Email Address"
             ></input>
-            <button className='flex flex-row items-center px-5 bg-red-700 font-semibold'>
+            <button className='w-1/2 lg:w-2/6 flex flex-row items-center lg:text-left p-2 lg:px-5 bg-red-700 font-semibold'>
                 Get Started
                 <IoIosArrowForward />
             </button>
@@ -229,6 +230,7 @@ export default function Home() {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
