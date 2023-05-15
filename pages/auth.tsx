@@ -61,6 +61,34 @@ export default function auth() {
     }
   }, [email, name, password, login]);
 
+  const handleGoogleSignin = () =>{
+    try {
+      signIn('google',{ callbackUrl: '/profiles' }).then(res=>{
+        toast.success('Signin Success')
+        router.push('/profiles')
+      }).catch(err=>toast.error('Somgthing went wrong'))
+    router.push('/profiles')
+
+    } catch (error) {
+      toast.error('Something Went wrong')
+    }
+  }
+
+  const handleGithubSignin = () => {
+    try {
+      signIn('github',{ callbackUrl: '/profiles' }).then(res=>{
+        toast.success('Signin Success')
+        router.push('/profiles')
+      }).catch(err=>toast.error('Somgthing went wrong'))
+    router.push('/profiles')
+
+    } catch (error) {
+      toast.error('Something Went wrong')
+    }
+
+  }
+  
+
   return (
     <div className="relative h-full w-full bg-[url('/assets/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
       <div className="bg-black w-full h-full lg:bg-opacity-70">
@@ -101,10 +129,10 @@ export default function auth() {
               {variant === 'login' ? 'Login' : 'Sign up'}
             </button>
             <div className="flex flex-row items-center gap-4 mt-8 justify-center">
-              <div onClick={() => signIn('google', { callbackUrl: '/profiles' })} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+              <div onClick={() =>{handleGoogleSignin()} } className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
                 <FcGoogle size={32} />
               </div>
-              <div onClick={() => signIn('github', { callbackUrl: '/profiles' })} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+              <div onClick={() =>handleGithubSignin()} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
                 <FaGithub size={32} />
               </div>
             </div>
