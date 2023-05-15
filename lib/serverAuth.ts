@@ -7,7 +7,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
     
     //getSession does not have all fields
-    const session = await getServerSession({req,res}, authOptions);
+    const session = await getServerSession(req,res, authOptions);
 
     //if session does not exists
     if (!session?.user?.email) {
