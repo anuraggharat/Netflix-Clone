@@ -10,7 +10,7 @@ import {useRouter} from 'next/router'
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 
-export default function auth() {
+export default function Auth() {
 
   //user Input Fields
   const [email, setEmail] = useState('');
