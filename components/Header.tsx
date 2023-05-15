@@ -39,10 +39,18 @@ export default function Header(props:HeaderProps) {
       setProfile(!profile);
     };
 
+  const handleLogout=()=>{
+    signOut()
+    .then(()=>{
+      setDropdrown(false)
+      router.push('/')
+    })
+    .catch(()=>{alert("Something went wrong, try again!")})
+  }
 
   return (
     <div
-      className={`fixed top-0 left-0 w-screen z-10 flex flex-row items-center justify-between align-middle py-5 px-5 md:px-10 ${
+      className={`fixed top-0 left-0 w-screen z-10 flex flex-row items-center justify-between align-middle lg:py-5 text-sm p-1 md:px-10 ${
         headerScrolled ? "bg-black" : "bg-transparent"
       }`}
     >
@@ -64,12 +72,22 @@ export default function Header(props:HeaderProps) {
               <div className=" flex  md:flex flex-1 justify-between">
         <div className="hidden px-10 md:flex items-center content-center">
           <div className="flex text-white items-center justify-center align-middle content-center">
-            <p className="mr-5">Home</p>
-            <p className="mr-5">TV shows</p>
-            <p className="mr-5">Movies</p>
-            <p className="mr-5">New & Popular</p>
-            <p className="mr-5">My List</p>
-            <p className="mr-5">Audio & Subtitles</p>
+            <p className="mr-5">
+              <Link href={'/user/browse'}>Home</Link>
+            </p>
+            <p className="mr-5">
+              <Link href={'/user/browse'}>Movies</Link>
+            </p>
+            <p className="mr-5">
+              <Link href={'/user/browse'}>Shows</Link>
+            </p>
+            <p className="mr-5">        
+              <Link href={'/user/browse'}>Trending</Link>
+            </p>
+            <p className="mr-5">
+              <Link href={'/user/browse'}>My List</Link>
+            </p>
+
           </div>
         </div>
         <div className="relative flex flex-row ml-auto md:hidden">
@@ -87,22 +105,19 @@ export default function Header(props:HeaderProps) {
             }
           >
             <p className=" block px-4 py-2 text-sm">
-              Home
+              <Link href={'/user/browse'}>Home</Link>
             </p>
             <p className=" block px-4 py-2 text-sm">
-              TV shows
+              <Link href={'/user/browse'}>Movies</Link>
             </p>
             <p className=" block px-4 py-2 text-sm">
-              Movies
+              <Link href={'/user/browse'}>Shows</Link>
             </p>
             <p className=" block px-4 py-2 text-sm">
-              New & Popular
+              <Link href={'/user/browse'}>Trending</Link>
             </p>
             <p className=" block px-4 py-2 text-sm">
-              My List
-            </p>
-            <p className=" block px-4 py-2 text-sm">
-              Audio and Subtitle
+              <Link href={'/user/browse'}>My List</Link>
             </p>
           </div>
         </div>
@@ -120,7 +135,7 @@ export default function Header(props:HeaderProps) {
             >
               <img
                 src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
-                className="w-10 mr-1 "
+                className="w-6 lg:w-10 mr-1 "
               />{" "}
               <AiFillCaretDown />
             </div>
@@ -133,7 +148,7 @@ export default function Header(props:HeaderProps) {
             >
               <p className="">{user?.name}</p>
               <p className="">Settings</p>
-              <button className=" text-white" onClick={() => signOut()}>
+              <button className=" text-white" onClick={() => handleLogout()}>
                 Signout
               </button>
             </div>

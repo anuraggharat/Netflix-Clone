@@ -10,14 +10,15 @@ import {useRouter} from 'next/router'
 
 export default function auth() {
 
-      const [email, setEmail] = useState('');
+  //user Input Fields
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
 
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
+  //to check is it login or signup
+  const [variant, setVariant] = useState('login');
 
-    const [variant, setVariant] = useState('login');
-
-    const router = useRouter()
+  const router = useRouter()
 
 
 
@@ -25,16 +26,17 @@ export default function auth() {
         setVariant((currentVariant) => currentVariant === 'login' ? 'register' : 'login');
     }, []);
 
-     const login = useCallback(async () => {
+    const login = useCallback(async () => {
     try {
-      await signIn('credentials', {
-        email,
-        password,
-        redirect: false,
-        callbackUrl: '/'
-      }).then(res=>console.log(res));
+      await signIn('credentials', {email,password,redirect: false,callbackUrl: '/'})
+      .then((res)=>{
+        //raise a toast here
 
-      //router.push('/profiles');
+        router.push('/profiles')
+      }).catch(error=>{
+        //raise a toast for error
+        console.log(error)
+      })
     } catch (error) {
       console.log(error);
     }
@@ -42,11 +44,14 @@ export default function auth() {
 
   const register = useCallback(async () => {
     try {
-      await axios.post('/api/register', {
-        email,
-        name,
-        password
-      }).then(res=>console.log(res));
+      await axios.post('/api/register', {email,name,password})
+      .then(res=>{
+        console.log(res)
+        //raise a toast again
+      }).catch(error=>{
+        //raise a toast for error
+        console.log(error)
+      });
 
       login();
     } catch (error) {

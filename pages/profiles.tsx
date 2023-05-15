@@ -32,7 +32,7 @@ export default function profiles() {
     const { data: currentUser } = useCurrentUser();
 
   const selectProfile = useCallback(() => {
-    router.push('/');
+    router.push('/user/browse');
   }, [router]);
 
   

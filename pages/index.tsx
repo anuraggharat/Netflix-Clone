@@ -43,8 +43,7 @@ const data = [
 export default function Home() {
   
   const[accClicked,setAccClicked]=useState(null)
-  const {data:user} = useCurrentUser();
-  console.log(user)
+  const {data:user=null} = useCurrentUser();
 
   const toggleAccordion=(id:any)=>{
     if (id==accClicked) {

@@ -47,9 +47,7 @@ export default function Browse() {
     <div className="relative">
       <Header user={user} />
       <InfoModal visible={isOpen} onClose={closeModal} />
-
-
-    <div className=" min-h-screen text-white flex flex-col justify-center items-center mb-60">
+    <div className="min-h-screen text-white mb-60">
       <HomeVideo />
       <div className="max-w-full pl-5 md:pl-10 mt-5 mb-40">
         <MovieList
@@ -98,18 +96,15 @@ export async function getServerSideProps(context:NextPageContext) {
 
   const session = await getSession(context);
 
-  //check if user session is present
-  //  if (!session) {
-  //   return {
-  //     redirect: {
-  //       destination: '/auth',
-  //       permanent: false,
-  //     }
-  //   }
-  // }
-  //make your API request here
-  const res = await fetch(`http://localhost:3000/api/movies`);
-  const movies = await res.json();
+
+   if (!session) {
+    return {
+      redirect: {
+        destination: '/auth',
+        permanent: false,
+      }
+    }
+  }
 
   return {
     props: {}
