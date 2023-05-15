@@ -27,13 +27,12 @@ export default function FavoriteButton({ movieId }:FavoriteButtonProps){
   const toggleFavorites = useCallback(async () => {
     let response;
     if (isFavorite) {
-    console.log(movieId)
-
+    console.log("Movie ID in Fav Button",movieId)
       //if movie is already favorited, remove it
-      response = await axios.delete('/api/favorite', { data:  movieId  });
+      response = await axios.delete(`/api/favorite/${movieId}`, { data:  {movieId:movieId}  });
     } else {
       //if its not favorite, delete from favorite
-      response = await axios.post('/api/favorite', { movieId });
+      response = await axios.post(`/api/favorite/${movieId}`, { movieId });
     }
 
 
