@@ -1,0 +1,75 @@
+[
+    {
+      "title":"A Quiet Place",
+      "description":"Cut off from the rest of the world, a tight-knit family lives in constant fear of making any sound that will attract terrifying alient creatures.",
+      "videoUrl":"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "thumbnailUrl":"https://image.cnbcfm.com/api/v1/image/106439103-1584025598317imagecropped.jpg?v=1584025646&w=1920&h=1080",
+      "genre":"thriller",
+      "duration":"130 minutes"
+   },
+   {
+      "title":"Breaking Bad",
+      "description":"Diagnosed with terminal lung cancer, a high school chemistry teacher resorts to cooking and selling meth to provide for his family.",
+      "videoUrl":"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "thumbnailUrl":"https://cdn.wallpapersafari.com/58/13/DISq4F.png",
+      "genre":"drama",
+      "duration":"8 Seasons"
+   },
+   {
+      "title":"Dark",
+      "description":"When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids.",
+      "videoUrl":"assets/dark.mp4",
+      "thumbnailUrl":"https://ntvb.tmsimg.com/assets/p14652182_b_h10_aa.jpg?w=1280&h=720",
+      "genre":"thriller",
+      "duration":"6 Seasons"
+   },
+   {
+      "title":"Extraction",
+      "description":"A hardened gun-for-hire's latest mission becomes a soul-searching race to survive when he's sent into Bangladesh to rescue a drug lord's kidnaped son.",
+      "videoUrl":"assets/extraction.mp4",
+      "thumbnailUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYTrf1tSqdBk7ZPDVJDXhuSxr4o6Gxan3GqB9h4Frnh5dR2OBwHXNIRE3lBl1zO3ogx1M&usqp=CAU",
+      "genre":"action",
+      "duration":"140 minutes"
+   },
+   {
+      "title":"Uncharted",
+      "description":"Victor Sullivan recruits Nathan Drake to help him find the lost fortune of Ferdinand Magellan. However, they face competition from Santiago Moncada, who believes that the treasure belongs to him.",
+      "videoUrl":"assets/extraction.mp4",
+      "thumbnailUrl":"https://static.bangkokpost.com/media/content/20220427/c1_2301274.jpg",
+      "genre":"action",
+      "duration":"140 minutes"
+   },
+    {
+      "title":"Red Notice",
+      "description":"In the world of international crime, an Interpol agent attempts to hunt down and capture the world's most wanted art thief.",
+      "videoUrl":"assets/extraction.mp4",
+      "thumbnailUrl":"https://staticg.sportskeeda.com/editor/2021/11/ed532-16366147619013-1920.jpg?w=840",
+      "genre":"action",
+      "duration":"120 Minutes"
+    },
+    {
+      "title":"Sacred Games",
+      "description":"When police officer Sartaj Singh receives an anonymous tip about the location of criminal overlord Ganesh Gaitonde, he embarks on a chase around Mumbai in what becomes a dangerous cat-and-mouse game.",
+      "videoUrl":"assets/extraction.mp4",
+      "thumbnailUrl":"https://i0.wp.com/globalzonetoday.com/wp-content/uploads/2021/05/Sacred-Games_Netflix-Web-Series.jpg",
+      "genre":"Thriller",
+      "duration":"2 Seasons"
+    },
+    {
+      "title":"Inception",
+      "description":"A hardened gun-for-hire's latest mission becomes a soul-searching race to survive when he's sent into Bangladesh to rescue a drug lord's kidnaped son.",
+      "videoUrl":"assets/extraction.mp4",
+      "thumbnailUrl":"https://images-na.ssl-images-amazon.com/images/S/pv-target-images/26677df38123a3a1553d704477c100af81b641e1d539bc1991f99f89935f18b0._UY500_UX667_RI_TTW_.jpg",
+      "genre":"drama",
+      "duration":"150 minutes"
+    },
+    {
+      "title":"The House of Secrets",
+      "description":"An examination of the truths and theories surrounding the deaths of 11 members of a Delhi family.",
+      "videoUrl":"assets/extraction.mp4",
+      "thumbnailUrl":"https://i.dawn.com/large/2021/10/616561fec1d32.jpg",
+      "genre":"horror",
+      "duration":"1 Season"
+    }
+
+]

@@ -42,12 +42,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { currentUser } = await serverAuth(req, res);
       let updateduserFavoriteIds 
       const userFavoriteIds = currentUser.favoriteIds;
-      console.log(userFavoriteIds)
       if (userFavoriteIds.includes(favoriteid)) {
         updateduserFavoriteIds = userFavoriteIds.filter(i=>i!=favoriteid)
 
       }
-        console.log(updateduserFavoriteIds)
 
       const updatedUser = await prismadb.user.update({
         where: {

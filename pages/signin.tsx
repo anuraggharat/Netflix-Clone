@@ -48,7 +48,6 @@ export default function Signin() {
           <p>
             New to Netflix?{" "}
             <Link href="">
-              <a className="text-white"> Sign up now.</a>
             </Link>
           </p>
         </div>

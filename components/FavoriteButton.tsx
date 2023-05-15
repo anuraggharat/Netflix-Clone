@@ -4,6 +4,7 @@ import { PlusIcon, CheckIcon } from '@heroicons/react/24/outline';
 
 import useCurrentUser from '../hooks/useCurrentUser';
 import useFavorites from '../hooks/useFavorites';
+import { toast } from 'react-hot-toast';
 
 interface FavoriteButtonProps {
   movieId: string
@@ -27,14 +28,14 @@ export default function FavoriteButton({ movieId }:FavoriteButtonProps){
   const toggleFavorites = useCallback(async () => {
     let response;
     if (isFavorite) {
-    console.log("Movie ID in Fav Button",movieId)
       //if movie is already favorited, remove it
       response = await axios.delete(`/api/favorite/${movieId}`, { data:  {movieId:movieId}  });
     } else {
       //if its not favorite, delete from favorite
       response = await axios.post(`/api/favorite/${movieId}`, { movieId });
     }
-
+    
+    toast.success("My List updated")
 
     const updatedFavoriteIds = response?.data?.favoriteIds;
 
