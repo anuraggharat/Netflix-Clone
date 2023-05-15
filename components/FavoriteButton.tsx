@@ -3,13 +3,15 @@ import React, { useCallback, useMemo } from 'react';
 import { PlusIcon, CheckIcon } from '@heroicons/react/24/outline';
 
 import useCurrentUser from '../hooks/useCurrentUser';
-import useFavorites from '../hooks/useFavorite';
+import useFavorites from '../hooks/useFavorites';
 
 interface FavoriteButtonProps {
   movieId: string
 }
 
-const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
+export default function FavoriteButton({ movieId }:FavoriteButtonProps){
+
+  
   const { mutate: mutateFavorites } = useFavorites();
 
   const { data: currentUser, mutate } = useCurrentUser();
@@ -20,14 +22,20 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
     return list.includes(movieId);
   }, [currentUser, movieId]);
 
+
+  //to toggle favorite
   const toggleFavorites = useCallback(async () => {
     let response;
-
     if (isFavorite) {
-      response = await axios.delete('/api/favorite', { data: { movieId } });
+    console.log(movieId)
+
+      //if movie is already favorited, remove it
+      response = await axios.delete('/api/favorite', { data:  movieId  });
     } else {
+      //if its not favorite, delete from favorite
       response = await axios.post('/api/favorite', { movieId });
     }
+
 
     const updatedFavoriteIds = response?.data?.favoriteIds;
 
@@ -47,4 +55,3 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
   )
 }
 
-export default FavoriteButton;

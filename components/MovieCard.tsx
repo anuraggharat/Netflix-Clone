@@ -16,7 +16,7 @@ export default function MovieCard({ data }:MovieCardProps){
   const { openModal } = useInfoModalStore();
 
   const redirectToWatch = useCallback(
-    () => router.push(`/watch/${data.id}`),
+    () => router.push(`play/${data.id}`),
     [router, data.id]
   );
 

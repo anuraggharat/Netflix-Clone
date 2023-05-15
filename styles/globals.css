@@ -21,7 +21,7 @@ html {
 .hide-scroll-bar::-webkit-scrollbar {
     display: none;
 }
-.flex-movies {
+.flex-movies{
     display: flex;
     overflow-x: auto;
     width: auto !important;

@@ -39,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { currentUser } = await serverAuth(req, res);
 
       const { movieId } = req.body;
-
+      console.log("req",req.body)
       const existingMovie = await prismadb.movie.findUnique({
         where: {
           id: movieId,

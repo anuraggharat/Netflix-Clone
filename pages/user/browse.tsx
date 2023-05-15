@@ -10,6 +10,7 @@ import useCurrentUser from "hooks/useCurrentUser";
 import HomeVideo from "@/components/HomeVideo";
 import useMovies from "hooks/useMovieList";
 import MovieCard from "@/components/MovieCard";
+import useFavorites from "hooks/useFavorites";
 
 //this is the main page. We will have an API which will give all the movies that we can watch.
 
@@ -27,6 +28,8 @@ export default function Browse() {
   const [curr,setCurr]=useState(null)
   const {data:user} = useCurrentUser()
   const { data: movies = [] } = useMovies();
+  const { data: favorites = [] } = useFavorites();
+
   console.log(movies)
   const toggleModal=()=>{
   
@@ -46,6 +49,10 @@ export default function Browse() {
         <MovieList
           data={movies}
           title="Trending on Netflix"
+        />
+        <MovieList
+          data={favorites}
+          title="My List"
         />
         </div>
       {/* <div className="max-w-full pl-5 md:pl-10 mt-5">
