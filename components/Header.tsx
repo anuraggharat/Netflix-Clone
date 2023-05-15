@@ -5,16 +5,18 @@ import {BsSearch} from 'react-icons/bs'
 import {IoIosNotificationsOutline} from 'react-icons/io'
 import { AiFillCaretDown } from "react-icons/ai";
 import { signOut } from "next-auth/react";
-import {VscAccount} from 'react-icons/vsc'
-import {FiSettings} from 'react-icons/fi'
+import { useRouter } from 'next/router';
 
+interface HeaderProps {
+  user:any
+}
 
-
-export default function Header(props) {
+export default function Header(props:HeaderProps) {
   const [headerScrolled, setHeaderscrolled] = useState(false);
   const [dropDown, setDropdrown] = useState(false)
   const [profile,setProfile]=useState(false)
   const {user} = props
+  const router = useRouter()
 
   useEffect(() => {
     const listener = () => {
@@ -58,7 +60,8 @@ export default function Header(props) {
           </svg>
         </Link>
       </div>
-      <div className=" flex  md:flex flex-1 justify-between">
+      {user && (
+              <div className=" flex  md:flex flex-1 justify-between">
         <div className="hidden px-10 md:flex items-center content-center">
           <div className="flex text-white items-center justify-center align-middle content-center">
             <p className="mr-5">Home</p>
@@ -83,22 +86,22 @@ export default function Header(props) {
                 : "hidden "
             }
           >
-            <p href="#" className=" block px-4 py-2 text-sm">
+            <p className=" block px-4 py-2 text-sm">
               Home
             </p>
-            <p href="#" className=" block px-4 py-2 text-sm">
+            <p className=" block px-4 py-2 text-sm">
               TV shows
             </p>
-            <p href="#" className=" block px-4 py-2 text-sm">
+            <p className=" block px-4 py-2 text-sm">
               Movies
             </p>
-            <p href="#" className=" block px-4 py-2 text-sm">
+            <p className=" block px-4 py-2 text-sm">
               New & Popular
             </p>
-            <p href="#" className=" block px-4 py-2 text-sm">
+            <p className=" block px-4 py-2 text-sm">
               My List
             </p>
-            <p href="#" className=" block px-4 py-2 text-sm">
+            <p className=" block px-4 py-2 text-sm">
               Audio and Subtitle
             </p>
           </div>
@@ -137,6 +140,12 @@ export default function Header(props) {
           </div>
         </div>
       </div>
+      )}
+        {!user && (
+          <button onClick={()=>router.push('/auth')} className='flex flex-row items-center py-2 px-5 bg-red-700 font-semibold'>
+                Sign In
+        </button>  
+        )}
     </div>
   );
 }

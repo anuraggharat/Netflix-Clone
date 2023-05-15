@@ -11,6 +11,8 @@ import HomeVideo from "@/components/HomeVideo";
 import useMovies from "hooks/useMovieList";
 import MovieCard from "@/components/MovieCard";
 import useFavorites from "hooks/useFavorites";
+import InfoModal from "@/components/InfoModal";
+import useInfoModalStore from "hooks/useInfoModalStore";
 
 //this is the main page. We will have an API which will give all the movies that we can watch.
 
@@ -29,6 +31,8 @@ export default function Browse() {
   const {data:user} = useCurrentUser()
   const { data: movies = [] } = useMovies();
   const { data: favorites = [] } = useFavorites();
+  const {isOpen, closeModal} = useInfoModalStore();
+
 
   console.log(movies)
   const toggleModal=()=>{
@@ -42,6 +46,8 @@ export default function Browse() {
   return (
     <div className="relative">
       <Header user={user} />
+      <InfoModal visible={isOpen} onClose={closeModal} />
+
 
     <div className=" min-h-screen text-white flex flex-col justify-center items-center mb-60">
       <HomeVideo />
